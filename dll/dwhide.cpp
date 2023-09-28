@@ -1,0 +1,320 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include "dxwnd.h"
+#include "dxwcore.hpp"
+#include "syslibs.h"
+#include "dxhelper.h"
+
+//#define FOUR_WINDOWS_STRIPED_HIDER
+
+/****************************************************************************
+ 	Function Name	: gShowHideTaskBar()
+ 	Parameters		: BOOL bHide (flag to toggle Show/Hide of Taskbar)
+ 	Return type		: void
+ 	Purpose			: Function is used to Show/Hide the TaskBar
+ 	Author			: Ashutosh R. Bhatikar (ARB)
+ 	Date written	: 20th December 2000
+ 	Modification History :
+ 	Date of modification					Reason
+    25th December 2000				Added methods to Show/Hide menu
+ ****************************************************************************/
+
+void gShowHideTaskBar(BOOL bHide /*=FALSE*/) {
+    RECT rectWorkArea;
+    RECT rectTaskBar;
+    static HWND pWnd = NULL;
+    static HWND pStart = NULL;
+    if(!pWnd) {
+        pWnd = FindWindow("Shell_TrayWnd", "");
+        // WinXP find
+        pStart = FindWindowEx(pWnd, NULL, "Button", NULL);
+        // if unsuccessful, do a Win7/8 find
+        if(!pStart) pStart = FindWindowEx((*pGetDesktopWindow)(), NULL, "Button", "Start");
+    }
+    (*pSystemParametersInfoA)(SPI_GETWORKAREA, 0, (LPVOID)&rectWorkArea, 0);
+    (*pGetWindowRect)(pWnd, &rectTaskBar);
+    if( bHide ) {
+        // Code to Hide the System Task Bar
+        rectWorkArea.bottom += (rectTaskBar.bottom - rectTaskBar.top);
+        (*pSystemParametersInfoA)(SPI_SETWORKAREA, 0, (LPVOID)&rectWorkArea, 0);
+        (*pShowWindow)(pWnd, SW_HIDE);
+        (*pShowWindow)(pStart, SW_HIDE);
+    } else {
+        // Code to Show the System Task Bar
+        rectWorkArea.bottom -= (rectTaskBar.bottom - rectTaskBar.top);
+        (*pSystemParametersInfoA)(SPI_SETWORKAREA, 0, (LPVOID)&rectWorkArea, 0);
+        (*pShowWindow)(pWnd, SW_SHOW);
+        (*pShowWindow)(pStart, SW_SHOW);
+    }
+}
+
+static bool quit = false;
+static RECT wDesktop;
+static HWND wHider = 0;
+
+#ifdef FOUR_WINDOWS_STRIPED_HIDER
+LRESULT CALLBACK dw_Hider_Message_Handler(HWND hwnd, UINT umsg, WPARAM wparam, LPARAM lparam) {
+    switch(umsg) {
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        break;
+    case WM_CLOSE:
+        quit = true;
+        break;
+    }
+    return (*pDefWindowProcA)(hwnd, umsg, wparam, lparam);
+}
+#else
+LRESULT CALLBACK dw_Hider_Message_Handler(HWND hwnd, UINT umsg, WPARAM wparam, LPARAM lparam) {
+    extern void ExplainMsg(char *, HWND, UINT, WPARAM, LPARAM);
+    // ExplainMsg("HIDER", hwnd, umsg, wparam, lparam);
+    //LRESULT ret;
+    switch(umsg) {
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        break;
+    case WM_CLOSE:
+        quit = true;
+        break;
+    }
+    // OutTrace("HIDER: msg=%#x(%s) w/lparam= %#x-%#x\n", umsg, ExplainWinMessage(umsg), wparam, lparam);
+    if(hwnd == wHider) {
+        WINDOWPOS *wp;
+        switch(umsg) {
+        case WM_NOTIFY:
+        case WM_SETFOCUS:
+        case WM_LBUTTONDOWN:
+        //case WM_LBUTTONUP:
+        //case WM_LBUTTONDBLCLK:
+        case WM_RBUTTONDOWN:
+        //case WM_RBUTTONUP:
+        //case WM_RBUTTONDBLCLK:
+        case WM_MBUTTONDOWN:
+            //case WM_MBUTTONUP:
+            //case WM_MBUTTONDBLCLK:
+            (*pInvalidateRect)(hwnd, NULL, TRUE);
+            (*pSetWindowPos)(hwnd, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOOWNERZORDER | SWP_NOSENDCHANGING);
+            (*pSetWindowPos)(dxw.GethWnd(), HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOOWNERZORDER | SWP_NOSENDCHANGING);
+            return 0;
+            break;
+        case WM_WINDOWPOSCHANGING:
+        case WM_WINDOWPOSCHANGED:
+            wp = (WINDOWPOS *)lparam;
+            wp->x = wDesktop.left;
+            wp->y = wDesktop.top;
+            wp->cx = wDesktop.right - wDesktop.left;
+            wp->cy = wDesktop.bottom - wDesktop.top;
+            break;
+        default:
+            break;
+        }
+    }
+    return (*pDefWindowProcA)(hwnd, umsg, wparam, lparam);
+}
+#endif
+
+static HINSTANCE RegisterHiderWindow() {
+    WNDCLASSEX WndClsEx;
+    HINSTANCE hinst = NULL;
+    static ATOM aClass;
+#ifdef DISABLEAERODESKTOP
+    typedef HRESULT (WINAPI * DwmEnableComposition_Type)(UINT);
+    DwmEnableComposition_Type pDwmEnableComposition;
+    HMODULE hlib;
+    // try to disable AERO desktop interface, if possible ...
+    pDwmEnableComposition = NULL;
+    hlib = (*pLoadLibraryA)("dwmapi.dll");
+    if(hlib)
+        pDwmEnableComposition = (DwmEnableComposition_Type)(*pGetProcAddress)(hlib, "DwmEnableComposition");
+    if(pDwmEnableComposition)
+        (*pDwmEnableComposition)(FALSE);
+#endif
+    hinst = GetModuleHandle(NULL);
+    if(!hinst)
+        OutTrace("GetModuleHandle ERROR err=%d\n", GetLastError());
+    else
+        OutTrace("GetModuleHandle hinst=%#x\n", hinst);
+    WndClsEx.cbSize        = sizeof(WNDCLASSEX);
+    WndClsEx.style         = 0;
+    WndClsEx.lpfnWndProc   = dw_Hider_Message_Handler; //DefWindowProc;
+    WndClsEx.cbClsExtra    = 0;
+    WndClsEx.cbWndExtra    = 0;
+    WndClsEx.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
+    //WndClsEx.hCursor       = LoadCursor(NULL, IDC_CROSS);
+    WndClsEx.hCursor       = NULL;
+    WndClsEx.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+    //WndClsEx.hbrBackground = CreateSolidBrush(RGB(200,0,0));
+    WndClsEx.lpszMenuName  = NULL;
+    WndClsEx.lpszClassName = "dxwnd:hider";
+    WndClsEx.hInstance     = hinst;
+    WndClsEx.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
+    // Register the application
+    aClass = (*pRegisterClassExA)(&WndClsEx);
+#ifndef DXW_NOTRACES
+    if(!aClass) OutTraceE("RegisterClassEx: ERROR err=%d\n", GetLastError());
+#endif // DXW_NOTRACES
+    return hinst;
+}
+
+#ifdef FOUR_WINDOWS_STRIPED_HIDER
+
+void dxwCore::HideDesktop(HWND hwnd) {
+    static BOOL DoOnce = TRUE;
+    static ATOM aClass;
+    static HWND wleft = 0, wright = 0, wtop = 0, wbottom = 0;
+    BOOL bleft, bright, btop, bbottom;
+    RECT wRect, wDesktop;
+    static HINSTANCE hinst = NULL;
+    if(DoOnce) {
+        hinst = RegisterHiderWindow();
+        DoOnce = FALSE;
+    }
+    if(!(*pGetWindowRect)(hwnd, &wRect)) {
+        OutTrace("GetWindowRect ERROR hwnd=%#x err=%d\n", hWnd, GetLastError());
+        return;
+    }
+    if(!(*pGetWindowRect)((*pGetDesktopWindow)(), &wDesktop)) {
+        OutTrace("GetWindowRect ERROR hwnd=%#x err=%d\n", NULL, GetLastError());
+        return;
+    }
+    if(dxw.dwFlags6 & HIDETASKBAR) {
+        wDesktop.left = 0;
+        wDesktop.top = 0;
+        wDesktop.right = (*pGetSystemMetrics)(SM_CXSCREEN);
+        wDesktop.bottom = (*pGetSystemMetrics)(SM_CYSCREEN);
+        gShowHideTaskBar(TRUE);
+    }
+    bleft =		(wDesktop.left != wRect.left);
+    bright =	(wDesktop.right != wRect.right);
+    btop =		(wDesktop.top != wRect.top);
+    bbottom =	(wDesktop.bottom != wRect.bottom);
+    OutTrace("Hider: desktop=(%d,%d)-(%d,%d)\n", wDesktop.left, wDesktop.top, wDesktop.right, wDesktop.bottom);
+    OutTrace("Hider: window =(%d,%d)-(%d,%d)\n", wRect.left, wRect.top, wRect.right, wRect.bottom);
+    // this is tricky: if you create a window with zero style, the manager seems to apply a default
+    // overlapped window style. The only way I got to be sure that the style is exactly nothing
+    // at all is to repeat the command by a SetWindowLong(hwnd, GWL_STYLE, 0) that sets again zero
+    // as the correct window style.
+    // create the windows that are necessary
+    HWND hParent = (*pGetDesktopWindow)();
+    if(!wleft && bleft) {
+        wleft = (*pCreateWindowExA)(0, "dxwnd:hider", "hider", 0, 0, 0, 0, 0, hParent, NULL, hinst, NULL);
+        (*pSetWindowLongA)(wleft, GWL_STYLE, 0);
+    }
+    if(!wright && bright) {
+        wright = (*pCreateWindowExA)(0, "dxwnd:hider", "hider", 0, 0, 0, 0, 0, hParent, NULL, hinst, NULL);
+        (*pSetWindowLongA)(wright, GWL_STYLE, 0);
+    }
+    if(!wtop && btop) {
+        wtop = (*pCreateWindowExA)(0, "dxwnd:hider", "hider", 0, 0, 0, 0, 0, hParent, NULL, hinst, NULL);
+        (*pSetWindowLongA)(wtop, GWL_STYLE, 0);
+    }
+    if(!wbottom && bbottom) {
+        wbottom = (*pCreateWindowExA)(0, "dxwnd:hider", "hider", 0, 0, 0, 0, 0, hParent, NULL, hinst, NULL);
+        (*pSetWindowLongA)(wbottom, GWL_STYLE, 0);
+    }
+    // destroy the windows no longer useful
+    if(wleft && !bleft) {
+        (*pDestroyWindow)(wleft);
+        wleft = 0;
+    }
+    if(wright && !bright) {
+        (*pDestroyWindow)(wright);
+        wright = 0;
+    }
+    if(wtop && !btop) {
+        (*pDestroyWindow)(wtop);
+        wtop = 0;
+    }
+    if(wbottom && !bbottom) {
+        (*pDestroyWindow)(wbottom);
+        wbottom = 0;
+    }
+    if(bleft) {
+        (*pMoveWindow)(wleft, wDesktop.left, wDesktop.top, wRect.left - wDesktop.left, wDesktop.bottom - wDesktop.top, TRUE);
+        (*pSetWindowLongA)(wleft, GWL_EXSTYLE, WS_EX_TOPMOST);
+        (*pShowWindow)(wleft, SW_SHOW);
+    }
+    if(bright) {
+        (*pMoveWindow)(wright, wRect.right, wDesktop.top, wDesktop.right - wRect.right, wDesktop.bottom - wDesktop.top, TRUE);
+        (*pSetWindowLongA)(wright, GWL_EXSTYLE, WS_EX_TOPMOST);
+        (*pShowWindow)(wright, SW_SHOW);
+    }
+    if(btop) {
+        (*pMoveWindow)(wtop, wDesktop.left, wDesktop.top, wDesktop.right - wDesktop.left, wRect.top - wDesktop.top, TRUE);
+        (*pSetWindowLongA)(wtop, GWL_EXSTYLE, WS_EX_TOPMOST);
+        (*pShowWindow)(wtop, SW_SHOW);
+    }
+    if(bbottom) {
+        (*pMoveWindow)(wbottom, wDesktop.left, wRect.bottom, wDesktop.right - wDesktop.left, wDesktop.bottom - wRect.bottom, TRUE);
+        (*pSetWindowLongA)(wbottom, GWL_EXSTYLE, WS_EX_TOPMOST);
+        (*pShowWindow)(wbottom, SW_SHOW);
+    }
+}
+
+#else
+
+void dxwCore::HideDesktop(HWND hwnd) {
+    static BOOL DoOnce = TRUE;
+    static ATOM aClass;
+    RECT wRect;
+    static HINSTANCE hinst = NULL;
+    DWORD lpWinCB;
+    if(DoOnce) {
+        hinst = RegisterHiderWindow();
+        DoOnce = FALSE;
+    }
+    OutDebugDW("HideDesktop: hwnd=%#x\n", hwnd);
+    GetMonitorWorkarea(&wDesktop, (Coordinates != DXW_DESKTOP_FULL));
+    if(dxw.dwFlags6 & HIDETASKBAR)gShowHideTaskBar(TRUE);
+    //OutTrace("Hider: desktop=(%d,%d)-(%d,%d)\n", wDesktop.left, wDesktop.top, wDesktop.right, wDesktop.bottom);
+    //OutTrace("Hider: window =(%d,%d)-(%d,%d)\n", wRect.left, wRect.top, wRect.right, wRect.bottom);
+    // v2.04.91: check for wHider health ...
+    if(wHider && !(*pGetClientRect)(wHider, &wRect)) {
+        OutTraceDW("HideDesktop: CLEAR bad wHider=%#x err=%d\n", wHider, GetLastError());
+        (*pDestroyWindow)(wHider);
+        wHider = NULL;
+    }
+    // this is tricky: if you create a window with zero style, the manager seems to apply a default
+    // overlapped window style. The only way I got to be sure that the style is exactly nothing
+    // at all is to repeat the command by a SetWindowLong(hwnd, GWL_STYLE, 0) that sets again zero
+    // as the correct window style.
+    HWND hParent = (*pGetDesktopWindow)();
+    if(!wHider) {
+        wHider = (*pCreateWindowExA)(0, "dxwnd:hider", "hider", 0, 0, 0, 0, 0, hParent, NULL, hinst, NULL);
+        if(!wHider) {
+            OutTraceE("HideDesktop: CreateWindowEx ERROR hwnd=%#x parent=%#x err=%d\n", hwnd, hParent, GetLastError());
+            return;
+        } else
+            OutTraceDW("HideDesktop: Created Window wHider=%#x hParent=%#x\n", wHider, hParent);
+        (*pSetWindowLongA)(wHider, GWL_STYLE, 0);
+    }
+    (*pMoveWindow)(wHider, wDesktop.left, wDesktop.top, wDesktop.right - wDesktop.left, wDesktop.bottom - wDesktop.top, TRUE);
+    (*pSetWindowPos)(wHider, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOOWNERZORDER | SWP_NOSENDCHANGING);
+    //(*pSetWindowPos)(wHider, hwnd, 0, 0, 0, 0, SWP_NOMOVE|SWP_NOSIZE);
+    (*pShowWindow)(wHider, SW_SHOW);
+    //(*pSetWindowPos)(wHider, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE|SWP_NOSIZE);
+    // v2.04.91: if there's a main window ...
+    if(!hwnd) return;
+    // make the game window visible again ....
+    if(!(*pGetWindowRect)(hwnd, &wRect)) {
+        OutTrace("HideDesktop: GetWindowRect ERROR hwnd=%#x err=%d\n", hwnd, GetLastError());
+        return;
+    }
+    if(dwFlags10 & HIDEWINDOWCHANGES) {
+        lpWinCB = (*pGetWindowLong)(hwnd, GWL_WNDPROC);
+        (*pSetWindowLong)(hwnd, GWL_WNDPROC, NULL);
+    }
+    if(!(*pSetWindowPos)(hwnd, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE)) {
+        OutTrace("HideDesktop: SetWindowPos ERROR hwnd=%#x err=%d\n", hwnd, GetLastError());
+        return;
+    }
+    if(dwFlags10 & HIDEWINDOWCHANGES)
+        (*pSetWindowLong)(hwnd, GWL_WNDPROC, lpWinCB);
+    // v2.04.32: commented out call to pUpdateWindow since it causes the activation of the WindowProc that crashes "Star Trek Birth of the Federation"
+    // pShowWindow seems more safe, but could be useless so is left commented (for now)
+    //(*pUpdateWindow)(hwnd);
+    //(*pShowWindow)(hwnd, SW_SHOW);
+}
+
+#endif

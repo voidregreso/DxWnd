@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Program List</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="20180208;19093048" />
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm">When right-clicking on the program's list, instead, the following menu will be shown: (Some of the options are only visible in Expert mode.)</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_programlist_rclick2.png" name="grafiikka3" align="bottom" width="320" height="421" border="0" id="grafiikka3" /></p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Modify</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Allows you to view and modify the program's configuration.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Run...</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">Run hooked - Activates (runs) the selected task. Same as double-clicking on the list entry.</p>
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">Run unhooked - Runs the selected task without activating DxWnd hooking.</p>
+          <p class="rvps2" style="border: none; padding: 0cm">Run suspended - For debugging inject suspended task only, runs and suspends the hooked task so that the user can safely activate a debugger and attach to the process. Once the operation is completed a click on the OK button on a dialog box will unfreeze the task. N.b. while suspended, the task stays within an endless close loop that will consume the 100% of the current CPU core, so the processor may get hot.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Delete</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Asks for confirmation and then deletes the selected entry.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Add</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Prompts for all data needed to define a new task in the list.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Duplicate</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Duplicates or clones an entry. You can modify the clone without affecting the original. This allows you to create multiple different entries with consistent settings.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Move</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">This menu is equivalent to Edit &gt; Move. Moves the selected entry in the list.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Explore</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Open a window explore session pointing to the program's configured install path.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Log</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">This menu is equivalent to Edit &gt; Log with a few additions for expert users.</p>
+          <p class="rvps2" style="border: none; padding: 0cm">Run DebugView: runs the DebugView tool, provided that this tool is installed and reached in DxWnd path. If the tool is either absent or not in DxWnd path, an error message will appear.</p>
+          <p class="rvps2" style="border: none; padding: 0cm">view Tail: runs the tail tool on the target program's logfile dxwnd.log, provided that this tool is reached in DxWnd path. The tool is part of DxWnd tools distribution, you may copy it either on DxWnd folder or on $WinDir/System32. Run "tail.exe" from a command prompt to get the command syntax: the tool can be used standalone for any generic purpose.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Export...</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Exports the highlighted program configuration to a file.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Kill</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Kills the corresponding program. Differently from the File -&gt; Process -&gt; Kill command, this command would not kill the currently active program, but the selected one, no matter whether it was managed by dxWnd or not. This is the reason why sometimes the first Kill command may fail and this one is in general more reliable, at the cost of selecting the proper entry.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Kill all</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Kills all running programs.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Set registry</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Saves the registy entries from Dxwnd Registry tab into a file called dxwnd.reg.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Set path</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Can be used to update the path field for a configuration. You must have the game running for it to work.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">View Flags</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Opens a window shoving all the enabled Dxwnd Flags for the application.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="78">
+          <p class="rvps2" style="border: none; padding: 0cm">Proxy</p>
+        </td>
+        <td width="1465">
+          <p class="rvps2" style="border: none; padding: 0cm">Used to setup the program to run from a proxy dll. This way Dxwnd interface does not need to be started. NOTE: Do not try to run a game with Dxwnd if it has proxy dll's installed (it usually results in a crash).</p>
+          <p><b>NOTE:</b> If you edit the configuration of your game you will need to remove and install the proxy again for the changes to take effect.</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p style="margin-bottom: 0.5cm"><br />
+    <br /></p>
+  </div>
+</body>
+</html>

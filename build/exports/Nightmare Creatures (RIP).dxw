@@ -1,0 +1,43 @@
+[target]
+title0=Nightmare Creatures (RIP)
+path0=D:\Games\Nightmare Creatures\NC.EXE
+startfolder0=
+launchpath0=
+module0=
+opengllib0=
+notes0=
+registry0=[HKEY_LOCAL_MACHINE\SOFTWARE\Activision]\n[HKEY_LOCAL_MACHINE\SOFTWARE\Activision\Nightmare Creatures]\n"FTP"="NCW95"\n"EXE"="nc_exe"\n\n[HKEY_LOCAL_MACHINE\SOFTWARE\Activision\Nightmare Creatures\1.0]\n\n[HKEY_LOCAL_MACHINE\SOFTWARE\Activision\Nightmare Creatures\HAL]\n"EnableHAL"=dword:00000000\n"ZBuffer"=dword:00000000\n"Animations"=dword:00000001\n"HALSelection"=dword:00000001\n\n[HKEY_LOCAL_MACHINE\SOFTWARE\Activision\Nightmare Creatures\VideoMode]\n"Mode"="1024X768"\n"Gamma"=hex:40,00,00,00\n"Detail"="High"\n\n[HKEY_LOCAL_MACHINE\SOFTWARE\Activision\Nightmare Creatures\Sound]\n"CD"=hex:AC,20,00,00\n"Effect"=hex:40,00,00,00\n\n[HKEY_LOCAL_MACHINE\SOFTWARE\Activision\Nightmare Creatures\Control]\n"Selection"=hex:00,00,00,00,00,00,00,00\n"Joystick"=hex:ff,80,00,04,ff,80,00,01,ff,80,00,02,ff,80,00,05,ff,80,00,07,\\n  ff,80,00,08,ff,80,00,03,ff,80,00,06,ff,80,00,0a,00,00,00,00,26,00,00,00,28,\\n  00,00,00,25,00,00,00,27,00,00,00,ff,00,02,00,ff,00,03,00,ff,00,00,00,ff,00,\\n  01,00\n"Keyboard"=hex:a2,00,00,00,20,00,00,00,a0,00,00,00,60,00,00,00,61,00,00,00,\\n  62,00,00,00,0d,00,00,00,a4,00,00,00,09,00,00,00,00,00,00,00,26,00,00,00,28,\\n  00,00,00,25,00,00,00,27,00,00,00,ff,00,02,00,ff,00,03,00,ff,00,00,00,ff,00,\\n  01,00
+ver0=0
+monitorid0=-1
+coord0=0
+flag0=673194018
+flagg0=1207959616
+flagh0=1044
+flagi0=1212153860
+flagj0=4224
+flagk0=65536
+flagl0=0
+flagm0=301989888
+flagn0=4
+flago0=0
+tflag0=0
+dflag0=0
+posx0=50
+posy0=50
+sizx0=800
+sizy0=600
+maxfps0=0
+initts0=0
+winver0=0
+maxres0=0
+swapeffect0=0
+maxddinterface0=7
+slowratio0=2
+scanline0=0
+initresw0=800
+initresh0=600
+[stamp]
+version=v2.04.36.fx3
+time=Thu Jul 13 09:34:22 2017
+
+

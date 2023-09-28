@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Debug</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3 { color: #000000 }
+                H3.cjk { font-family: "SimSun" }
+                H3.ctl { font-family: "Mangal" }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_debug.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <h3 class="western">Debug Flags</h3>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Enable capability mask</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">CAPMASK</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Full RECT Blit</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">FULLRECTBLT</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Causes every blit operation to primary surface to be applied to the full surface (NULL rect coordinates). It could be handy to recover wrong surface handling.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Center to Window</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">CENTERTOWIN</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Force D3DCMP_ALWAYS setting</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">ZBUFFERALWAYS</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Force hot patching</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">HOTPATCHALWAYS</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Freeze injected son process</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">FREEZEINJECTEDSON</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Stress resources</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">STRESSRESOURCES</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Debug Mode Logs</h3>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Start with toggle</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">STARTWITHTOGGLE</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Initialize custom key toggle to active status. Checking this flag will turn all flagged Dump functions on from the start of hook with no need to press the custom key toggle.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Assert Dialog</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">ASSERTDIALOG</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Dump bitmaps</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">DUMPBITMAP</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Debug utility making images of HBITMAP resources in bmp.out game folder.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Dump DIB Sections</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">DUMPDIBSECTION</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Debug utility making images of DIB resources in bmp.out game folder. Note: images of DIBs with negatve height will be up-side-down.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Dump Device Context</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">DUMPDEVCONTEXT</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Dump CPUID</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">DUMPCPUID</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Capture screenshots</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">CAPTURESCREENS</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Visual Flags</h3>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppress ddraw Blt to primary</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">NODDRAWBLT</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppress ddraw Flip</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">NODDRAWFLIP</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppress GDI Blt</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">NOGDIBLT</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Do not Blt to primary</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">NOBLT</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Use FastBlt to primary</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">DOFASTBLT</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Highlight blit to primary</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">MARKBLIT</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Highlight Locked surfaces</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">MARKLOCK</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Highlight WinG32 operations</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">MARKWING32</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Highlight GDI32 operations</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">MARKGDI32</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">D3D tweaks</h3>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Patch execute buffer</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">PATCHEXECUTEBUFFER</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Force ZBuffer ON</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">FORCEZBUFFERON</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Force ZBuffer OFF</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">FORCEZBUFFEROFF</p>
+        </td>
+        <td width="1160"></td>
+      </tr>
+    </table>
+    <div id="topic_footer" dir="ltr">
+      <p style="margin-bottom: 0.5cm"><br />
+      <br /></p>
+    </div>
+  </div>
+</body>
+</html>

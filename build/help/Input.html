@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Input</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3 { color: #000000 }
+                H3.cjk { font-family: "SimSun" }
+                H3.ctl { font-family: "Mangal" }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_input3.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <h3 class="western">Control keys</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="125">
+          <p class="rvps2" style="border: none; padding: 0cm">Alt-tab</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">NODISABLEALTTAB DISABLEALTTAB</p>
+        </td>
+        <td width="1282">
+          <p class="rvps2" style="border: none; padding: 0cm">A program may try to control the behavior of the Alt-tab sequence by placing a keyboard hook and filtering this key sequence. The radio button allows to leave this unaltered (DEFAULT) or bypass the program's attempt to disable Alt-tab (ON) or disable the Alt-tab sequence (OFF).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="125">
+          <p class="rvps2" style="border: none; padding: 0cm">Recover PrintScreen key</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">NODISABLEPRINT</p>
+        </td>
+        <td width="1282">
+          <p class="rvps2" style="border: none; padding: 0cm">A program may try to disable the PrintScreen key by placing a keyboard hook and filtering this key sequence. This flag bypass the program's attempt to disable PrintScreen.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="125">
+          <p class="rvps2" style="border: none; padding: 0cm">Suspend GetAsyncKeyState</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXASYNCKEYSTATE</p>
+        </td>
+        <td width="1282">
+          <p class="rvps2" style="border: none; padding: 0cm">A program may detect keyboard and mouse events (pressed keys, mouse buttons pressed) by using the GetAsyncKeyState call that works no matter if the program is currently active or not. In case of fullscreen applications, that may do little difference, but when running in window mode the detection of key states may cause a unwanted reaction from the program while clicking on top of another window. The flag inhibits the asynchronous detection of key states while the program is not currently active. In particular, the flag was designed to fix a GOG's patch in "Wizards and Warriors" meant to ensure a mouse click reaction, but that had the side effect of making the game react to clicks on other windows.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">DirectInput</h3>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook dinput</p>
+        </td>
+        <td width="244">
+          <p class="rvps2" style="border: none; padding: 0cm">HOOKDI</p>
+        </td>
+        <td width="1042">
+          <p class="rvps2" style="border: none; padding: 0cm">Hooks DirectInput libraries, making sure that the DirectInput modes are appropriate for a non fullscreen program and enabling all other flags in the same group.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook dinput8</p>
+        </td>
+        <td width="244">
+          <p class="rvps2" style="border: none; padding: 0cm">HOOKDI8</p>
+        </td>
+        <td width="1042">
+          <p class="rvps2" style="border: none; padding: 0cm">Hooks DirectInput8 libraries, making sure that the DirectInput8 modes are appropriate for a non fullscreen program and enabling all other flags in the same group.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Unacquire devices on focus lost</p>
+        </td>
+        <td width="244">
+          <p class="rvps2" style="border: none; padding: 0cm">UNACQUIRE</p>
+        </td>
+        <td width="1042">
+          <p class="rvps2" style="border: none; padding: 0cm">Unacquire DirectInput/DirectInput8 devices when they lose focus and acquire them back when they regain focus. This option should be set if the program using DirectInput libraries keeps listening to mouse input even when the program's window is inactive, or when it keeps ignoring mouse input even when the program's window becomes active once again.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Emulate mouse relative movement</p>
+        </td>
+        <td width="244">
+          <p class="rvps2" style="border: none; padding: 0cm">EMULATERELMOUSE</p>
+        </td>
+        <td width="1042">
+          <p class="rvps2" style="border: none; padding: 0cm">Emulates the DirectInput detection of relative mouse position by keeping the mouse at the center of the window and looking for movements. It should be used whenever the native DirectInput mechanism doesn't work properly.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Skip HID device type</p>
+        </td>
+        <td width="244">
+          <p class="rvps2" style="border: none; padding: 0cm">SKIPDEVTYPEHID</p>
+        </td>
+        <td width="1042">
+          <p class="rvps2" style="border: none; padding: 0cm">Newer versions of Windows may have access to new types of HID (human interface device) that can interfere with old games that can only recognize the three traditional devices (mouse, keyboard, and joystick). This flag masks the presence of such devices. It fixes a crash in the game &quot;Jetboat Superchamps 2,&quot; the only known game that requires this setting.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppress DI common errors</p>
+        </td>
+        <td width="244">
+          <p class="rvps2" style="border: none; padding: 0cm">SUPPRESSDIERRORS</p>
+        </td>
+        <td width="1042">
+          <p class="rvps2" style="border: none; padding: 0cm">This flag forces some DirectInput operations to return a successful completion rather than an error even in the event of a failure. Some programs work more reliably with this flag turned on.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Set keyboard shared coop. level</p>
+        </td>
+        <td width="244">
+          <p class="rvps2" style="border: none; padding: 0cm">SHAREDKEYBOARD</p>
+        </td>
+        <td width="1042">
+          <p class="rvps2" style="border: none; padding: 0cm">Forces DirectInput cooperative level to NONEXCLUSIVE mode for the keyboard. Use this flag when the program shows DirectInput errors related to keyboard access. The game &quot;Planet of the Apes&quot; can't process the PrintScreen key without this flag.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Xinput</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="125">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook xinput</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">HOOKXINPUT</p>
+        </td>
+        <td width="1282">
+          <p class="rvps2" style="border: none; padding: 0cm">Preliminary xinput Xbox 360 controller emulation.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Joystick</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="125">
+          <p class="rvps2" style="border: none; padding: 0cm">Enable virtual joystick</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">VIRTUALJOYSTICK</p>
+        </td>
+        <td width="1282">
+          <p class="rvps2" style="border: none; padding: 0cm">Some games require a joystick. If a joystick is not connected, this flag emulates a rudimentary joystick, controlled by mouse movement. The X and Y axes are controlled by mouse movement, the two primary joystick buttons are controlled by left and right click, and the joystick centering function is controlled by the middle mouse button (if available). The joysticks position and its button states are shown in a cross-shaped viewfinder that overlaps the game window. See <a href="VirtualJoystick.html">Virtual Joystick</a> for configuration details.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="125">
+          <p class="rvps2" style="border: none; padding: 0cm">Hide joysticks</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">HIDEJOYSTICKS</p>
+        </td>
+        <td width="1282">
+          <p class="rvps2" style="border: none; padding: 0cm">This flag tries to hide the joystick from the game.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Keyboard handling</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="125">
+          <p class="rvps2" style="border: none; padding: 0cm">Enable hot keys</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">ENABLEHOTKEYS</p>
+        </td>
+        <td width="1282">
+          <p class="rvps2" style="border: none; padding: 0cm">DxWnd can set some special keys (e.g. Alt, Fn) to trigger special actions, storing the key association in the DxWnd.ini file. This flag enables hot key definitions. If unchecked, all hot keys are disabled for this program.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="125">
+          <p class="rvps2" style="border: none; padding: 0cm">Intercept Alt-F4 key</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">HANDLEALTF4</p>
+        </td>
+        <td width="1282">
+          <p class="rvps2" style="border: none; padding: 0cm">Intercepts the Alt-F4 key in the message processing loop to immediately terminate the program, avoiding any programmed exit procedure (cinematics, save state warnings, ads...). Only has an effect if the game is doing the message processing loop.</p>
+        </td>
+      </tr>
+    </table>
+    <div id="topic_footer" dir="ltr">
+      <p style="margin-bottom: 0.5cm"><br />
+      <br /></p>
+    </div>
+  </div>
+</body>
+</html>

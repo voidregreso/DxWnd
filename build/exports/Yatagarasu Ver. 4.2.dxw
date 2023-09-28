@@ -1,0 +1,43 @@
+[target]
+title0=Yatagarasu Ver. 4.2
+path0=D:\Games\Yatagarasu Ver. 4.2\yatagarasu4.exe
+startfolder0=
+launchpath0=
+module0=
+opengllib0=
+notes0=Press F8 to enter DxWnd fullscreen-windowed mode.\n\nWindow mode is not perfect, but fullscreen is ok.
+registry0=
+ver0=0
+monitorid0=-1
+coord0=0
+flag0=538968098
+flagg0=1207959552
+flagh0=20
+flagi0=138412036
+flagj0=128
+flagk0=65536
+flagl0=268435456
+flagm0=0
+flagn0=4
+flago0=0
+tflag0=0
+dflag0=0
+posx0=50
+posy0=50
+sizx0=800
+sizy0=600
+maxfps0=0
+initts0=0
+winver0=0
+maxres0=0
+swapeffect0=0
+maxddinterface0=7
+slowratio0=2
+scanline0=0
+initresw0=800
+initresh0=600
+[stamp]
+version=2.04.27.a0
+time=Thu Apr 27 22:50:41 2017
+
+

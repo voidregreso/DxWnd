@@ -1,0 +1,8 @@
+LIBRARY "dsound"
+EXPORTS
+DirectSoundCaptureCreate = FakeDirectSoundCaptureCreate	@1
+DirectSoundCaptureEnumerateA = FakeDirectSoundCaptureEnumerateA	@2
+DirectSoundCaptureEnumerateW = FakeDirectSoundCaptureEnumerateW @3
+DirectSoundCreate = FakeDirectSoundCreate @4
+DirectSoundEnumerateA = FakeDirectSoundEnumerateA @5
+DirectSoundEnumerateW = FakeDirectSoundEnumerateW @6

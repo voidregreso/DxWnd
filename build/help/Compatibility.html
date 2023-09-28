@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Compatibility</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3 { color: #000000 }
+                H3.cjk { font-family: "SimSun" }
+                H3.ctl { font-family: "Mangal" }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_compat3.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <h3 class="western">Tweaks</h3>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Block process priority class</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">BLOCKPRIORITYCLASS</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Blocks a process's attempts to change its own priority class. Old fullscreen games may use this trick to get 100% CPU power dedicated to them, but on modern OSes and windowed environments this could be a bad idea, interfering with other operations and overheating the processor for no reason.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Set single core process affinity</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">SINGLEPROCAFFINITY</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Some games are not properly synchronized to run on physically separate multiple core CPUs, or simply don't properly handle powerful CPUs. This option sets the program's core affinity so that the program is run by a single core (the first one).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Set last core affinity</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">USELASTCORE</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Same as SINGLEPROCAFFINITY, but picks the last CPU core.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Limit available resources</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">LIMITRESOURCES</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Causes the query for available resources (RAM, hard disk space, and so on) to return a limited value: some old games can't handle a very big integer number and see it as a negative value, refusing to start. Note: The Hook tab option &quot;Inject suspended process&quot; may need to be enabled first for this option to work.</p>
+          <p>Usually games that need this flag crash immediately at the start complaining about the lack of memory. However there are exceptions to this rule. For example Dungeon Keeper crashes randomly during game play if this flag is not enabled.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Disable performance counter</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">NOPERFCOUNTER</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Since performance metrics hardware is not mandatory on a PC, this flag disables the GetPerfCounter() performance metrics API, simulating an unsupported condition. Usually, in this condition the software should rely on other performance measurement metrics that are more conveniently manipulated by DxWnd timing hooks. It should be set when, despite the time acceleration feature, the program doesn't seem to behave according to the imposed speed ratio.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Bypass font unsupported api</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">FONTBYPASS</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Some games may attempt to manage old font styles that were present by default on legacy platforms and are no longer supported. This flag simulates a success operation to let the program continue. Of course, the font will be wrong, but Windows will approximate the choice with the most similar available font.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Replace privileged opcodes</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">REPLACEPRIVOPS</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Real multitasking OSes (from Windows NT onward) forbid applications from using privileged instructions that directly manipulate the hardware, like the IN opcode. Running a program with such opcodes would result in a program exception on modern systems. This option scans the program code segment at startup and replaces all detected privileged operations with NOP (no operation) instructions. Since these opcodes are often dedicated to interactions with sound hardware, the program will likely work with the possible side effect of some audio issues. Use this flag for games like Ubik.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Handle exceptions</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">HANDLEEXCEPTIONS</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Setting this flag causes DxWnd to set its own exception handler that tries (often successfully) to fix several common exceptions, such as the divide by zero exception in old games that were trying to calculate the CPU speed. This is a good flag to try to fix random crashes.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Diablo tweak</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">DIABLOTWEAK</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">A flag that seems to improve Blizzard's &quot;Diablo&quot; compatibility. It should not be used for other games and will cease to be supported as soon as a more general tweak is discovered.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Intercept Imagehlp.dll</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">NOIMAGEHLP</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Intercept imagehlp.dll unsupported calls, returning a clean error condition so that the program doesn't crash. One notable game that needs this flag is The Fifth Element.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">EA Sports hack</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">EASPORTSHACK</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Intercept and neutralize some of the internal hooks usually set by &quot;EA Sports&quot; games, and possibly other titles as well.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Reserve legacy memory segments</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">LEGACYALLOC</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Old 16-bit programs for Windows 95 and 98 relied on the availability of memory from address 0x4000000 to 0x8FFFFFF, even though they never explicitly allocated it. Recent OSes don't guarantee this memory availability. This flag, combined with &quot;Inject suspended process&quot;, reserves memory in this range when the program starts up, before that memory can be used for other purposes.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Disable Max Windowed Mode</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">DISABLEMAXWINMODE</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Invoke DirectDraw SetAppCompatData(12,0) to set the DisableMaxWindowedMode.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Win7 color fix</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">COLORFIX</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">As described in a DirectDraw hack, this flag fixes a color problem that Windows 7 has with 8BPP palettized modes. It only has an effect when the screen is actually set to an 8BPP color depth, which is now very rare.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Pretend Win visible on top</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">PRETENDVISIBLE</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">When set, it forces the detection of the main window as always visible (IsWindowVisible will always return TRUE) and on top of the z-order (GetTopWindow always returning the main window handle) as one would expect from a fullscreen program window.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Win insulation</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">WININSULATION</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Avoid enumerating windows so that the program can't interfere with them. Fixes &quot;Tribal Rage&quot; damages to desktop.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Disable CPU MMX support</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">DISABLEMMX</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Fixes &quot;The New Adventures of the Time Machine&quot;.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Safe MSVCRT allocs</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">SAFEALLOCS</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">The msvcrt.dll library contains the implementation of C/C++ allocation routines malloc, free, realloc. Many bugs may come from errors in using the addresses returned by and fed to these calls. The flag tries to prevent some problems by wrapping the allocated areas with a small preamble that identify the correct usage of these functions. In particular, it avoids free operations on bad addresses (either because already freed or just wrong) skipping a potential cause of game crash.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Tweaks(2)</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix GlobalUnlock</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXGLOBALUNLOCK</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Fixes a reported problem of the 16-bit GlobalUnock() API's 32-bit port. In some cases, it never returns the expected value, causing game crashes or endless loops.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="190">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix FreeLibrary</p>
+        </td>
+        <td width="173">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXFREELIBRARY</p>
+        </td>
+        <td width="1170">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix FreeLibrary, simulating a return code of 0 (error) when attempting to free an unallocated module as Windows 95 and 98 would. Use this flag to fix the endless loop problem in &quot;Heavy Gear&quot; version 1.2.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">Skip FreeLibrary recursion</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">SKIPFREELIBRARY</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Corrects an issue with the FreeLibrary invocation that ends up in a recursive call causing a stack overflow. (Fixes the "Disciples Sacred Lands" crash at startup.)</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix LoadLibrary error</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">LOADLIBRARYERR</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Return ERROR_DLL_NOT_FOUND instead of ERROR_MOD_NOT_FOUND error code. Fixes &quot;Nightmare Creatures&quot;.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix LoadLibrary altered search path</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXALTEREDPATH</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Corrects an issue with the standard and alternate search strategy in LoadLibraryEx by adding the current working directory to the search path, so that the files can be linked while staying in the original place. (Needed for the game "Anachronox".)</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix AdjustWindowRect</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXADJUSTWINDOWRECT</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Selectively turn the AdjustWindowRect coordinate patching. The flag must be checked for &quot;Man TT Super Bike&quot; and unckecked for &quot;Imperialism II&quot;.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">Virtual Heap (Win95/98 compat.)</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">VIRTUALHEAP</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Remaps memory requests from heap to malloc requests for any additional heap but the default process heap. Needed for some &quot;Wing Commander&quot; games to work.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">Virtual Process Heap</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">VIRTUALPROCHEAP</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Forces the malloc replacement also for the process heap despite the fact that it is not possible to intercept its creation. Requires the VIRTUALHEAP flag to be set.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">NO BAADFOOD</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">NOBAADFOOD</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Avoid (virtual) heap initialization to 0xBAADFOOD value, setting to 0x0 instead. Needed to run &quot;Independence Day&quot;.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Fake Version</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="91">
+          <p class="rvps2" style="border: none; padding: 0cm">Fake Version</p>
+        </td>
+        <td width="112">
+          <p class="rvps2" style="border: none; padding: 0cm">FAKEVERSION</p>
+        </td>
+        <td width="1334">
+          <p class="rvps2" style="border: none; padding: 0cm">Causes the program to detect the chosen Windows release. Notice: this is not the same thing as the compatibility setting of the Windows properties panel, which also adjusts the system's behavior to emulate the chosen platform.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">GOG</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="116">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook GOG libs</p>
+        </td>
+        <td width="126">
+          <p class="rvps2" style="border: none; padding: 0cm">HOOKGOGLIBS</p>
+        </td>
+        <td width="1295">
+          <p class="rvps2" style="border: none; padding: 0cm">Games distributed by GOG (gog.com) sometimes apply compatibility patches by changing the name and compatibility behavior of some system DLLs and routing system calls here. This flag causes DxWnd to hook these custom libraries instead of the system equivalent. Only use this flag on certain GOG games.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="116">
+          <p class="rvps2" style="border: none; padding: 0cm">Bypass GOG libs</p>
+        </td>
+        <td width="126">
+          <p class="rvps2" style="border: none; padding: 0cm">BYPASSGOGLIBS</p>
+        </td>
+        <td width="1295">
+          <p class="rvps2" style="border: none; padding: 0cm">The purpose of this flag is similar to that of HOOKGOGLIBS. It is sometimes a better solution to avoid rerouting the system calls to custom DLLs and instead map them to system DLLs. This flag breaks GOG's system call rerouting. Only use this flag on certain GOG games.</p>
+        </td>
+      </tr>
+    </table>
+    <div id="topic_footer" dir="ltr">
+      <p style="margin-bottom: 0.5cm"><br />
+      <br /></p>
+    </div>
+  </div>
+</body>
+</html>

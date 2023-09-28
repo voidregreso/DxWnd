@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>DxWnd</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script type="text/javascript">
+  //<![CDATA[
+      function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;")
+            .replace(/:/g, "");
+      }
+      var sTopic = "";
+      if (top.location.href.lastIndexOf("?") > 0)
+        sTopic = top.location.href.substring(top.location.href.lastIndexOf("?") + 1, top.location.href.length);
+      if (sTopic == "") sTopic = "Introduction.html";
+          sTopic = escapeHtml(sTopic);
+      document.write('<frameset cols="300,*">');
+      document.write('<frame src="toc.html" name="FrameTOC" frameborder="0">');
+      document.write('<frame src="' + sTopic + '" name="FrameMain" frameborder="0">');
+      document.write('</frameset>');
+    
+  //]]>
+  </script>
+</head>
+<body lang="en-US" dir="ltr" xml:lang="en-US">
+  <p style="margin-bottom: 0cm"><noscript></noscript></p>
+  <p>JavaScript has been disabled by your browser! Please allow blocked content for the help files to display correctly.</p>
+  <p>If you can not use JavaScript you can open the help files in a reduced functionality mode by opening <a href="./toc.html">toc.html</a></p>
+</body>
+</html>

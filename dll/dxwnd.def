@@ -1,0 +1,17 @@
+LIBRARY dxwnd
+EXPORTS
+		SetTarget				@1
+		StartHook				@2
+		EndHook					@3
+		GetDllVersion			@4
+		GetHookStatus			@5
+		GetHookInfo				@6
+		Inject					@7
+		GetThreadStartAddress	@8
+		GetFlagCaption			@9
+		HookInit				@10
+		GetFilterList			@11
+		GetRendererList			@12
+		GetDxWndCaps			@13
+		CommitAndInject			@14
+		

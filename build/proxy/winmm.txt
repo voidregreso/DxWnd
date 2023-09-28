@@ -1,0 +1,10 @@
+Beware!
+
+The winmm.dll proxy triggers the suspicions of many AV software making it impossible to 
+frrly distribute it. For this reasom the winmm.dll file was stored into the cyphered
+winmm.rar file, passwrod protected with password "winmm".
+This way the AV can't access its content and block the transfer.
+Be aware that in case you may want to use that proxy the archive will have to be decompressed
+on its current folder, but the operation could easily wake up the AV detection.
+If that happens it is a false positive, but you don't have to believe me, so you may leave the
+file alone as well.

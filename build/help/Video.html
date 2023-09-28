@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Video</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3 { color: #000000 }
+                H3.cjk { font-family: "SimSun" }
+                H3.ctl { font-family: "Mangal" }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_video5.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <h3 class="western">Window style</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">Default</p>
+        </td>
+        <td width="161"></td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Initializes the game window with a title bar and resizeable borders.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">thick frame</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXWINFRAME</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">To get overlapped window with thick border.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">modal</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">MODALSTYLE</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">A borderless and titleless modal style is chosen.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">thin frame</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXTHINFRAME</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">To get overlapped window with thin border.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">Lock win style</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">LOCKWINSTYLE</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Intercepts messages and calls that the program makes to itself to change its own windowstyle.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Window handling</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="212">
+          <p class="rvps2" style="border: none; padding: 0cm">Prevent Win Maximize</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">PREVENTMAXIMIZE</p>
+        </td>
+        <td width="1183">
+          <p class="rvps2" style="border: none; padding: 0cm">Some modern games don't actually go into fullscreen mode, but just make the window occupy the whole screen. This option intercepts Windows messages and user32 calls to avoid changing the window position and size to make it a fullscreen window.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="212">
+          <p class="rvps2" style="border: none; padding: 0cm">Emulate Win Maximize</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">EMULATEMAXIMIZE</p>
+        </td>
+        <td width="1183">
+          <p class="rvps2" style="border: none; padding: 0cm">To assign proper size &amp; position to maximized windows. Useful for &quot;Mig Alley&quot;.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="212">
+          <p class="rvps2" style="border: none; padding: 0cm">Force win resize</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">FORCEWINRESIZE</p>
+        </td>
+        <td width="1183">
+          <p class="rvps2" style="border: none; padding: 0cm">Experimental (and not working very well so far): should force window resizing messages to be processed so that the window can be resized by dragging its borders.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="212">
+          <p class="rvps2" style="border: none; padding: 0cm">Recover screen mode</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">RECOVERSCREENMODE</p>
+        </td>
+        <td width="1183">
+          <p class="rvps2" style="border: none; padding: 0cm">Sets the screen mode to registry default settings. In general, DxWnd intercepts any attempt to change display settings and prevents unwanted operations, but some programs still send display settings instructions before DxWnd can possibly intercept them (e.g. before the window is created and the windows hook is invoked). In this case, changing the display settings right afterward is the only possible solution. Try this when other options don't work.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="212">
+          <p class="rvps2" style="border: none; padding: 0cm">Refresh on win resize</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">REFRESHONRESIZE</p>
+        </td>
+        <td width="1183">
+          <p class="rvps2" style="border: none; padding: 0cm">Any decently written Windows application should take care of refreshing the screen primary surface when resized, and most fullscreen games do it. Some don't, because they were not supposed to ever be resized. This flag is forces a refresh (useful for the game Uprising).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="212">
+          <p class="rvps2" style="border: none; padding: 0cm">Hide multi-monitor config</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">HIDEMULTIMONITOR</p>
+        </td>
+        <td width="1183">
+          <p class="rvps2" style="border: none; padding: 0cm">Makes the program ignore multiple monitors in your system configuration, giving information about the primary monitor only.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="212">
+          <p class="rvps2" style="border: none; padding: 0cm">Hide Taskbar</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">HIDETASKBAR</p>
+        </td>
+        <td width="1183">
+          <p class="rvps2" style="border: none; padding: 0cm">Forces the Windows Taskbar to hide while a game is running. Upon game termination the taskbar will be recovered to its initial state, but in case of a game crash it is possible that the taskbar will keep staying hidden. In such a case, you can recover the taskbar status by using the menu command "<a href="Tools.html">Tools</a> -&gt; Desktop taskbar -&gt; Show"</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="212">
+          <p class="rvps2" style="border: none; padding: 0cm">No Taskbar overlap</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">NOTASKBAROVERLAP</p>
+        </td>
+        <td width="1183">
+          <p class="rvps2" style="border: none; padding: 0cm">To prevent window overlaping the desktop taskbar.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="212">
+          <p class="rvps2" style="border: none; padding: 0cm">Set DPI awareness</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">SETDPIAWARE</p>
+        </td>
+        <td width="1183">
+          <p class="rvps2" style="border: none; padding: 0cm">Sets DPI awareness for the hooked program.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Initial virtual color setting</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">Current</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Does not change the video color mode.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">8 BPP</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Some games act as if you had switched the video mode to 8BPP before starting the game, making 8BPP emulation useless. This option tells the game that the desktop setting is in 8BPP mode already.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">16 BPP</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Same as above, but declaring a 16BPP setting.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">24 BPP</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Same as above, but declaring a 24BPP setting.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">32 BPP</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Same as above, but declaring a 32BPP setting.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Window size &amp; position</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="84">
+          <p class="rvps2" style="border: none; padding: 0cm">Free</p>
+        </td>
+        <td width="1459">
+          <p class="rvps2" style="border: none; padding: 0cm">Allows you to move and resize the window freely, with commands from inside the application (through system calls) or from external user commands (such as grabbing the window border to stretch or move the window).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="84">
+          <p class="rvps2" style="border: none; padding: 0cm">Floating</p>
+        </td>
+        <td width="1459">
+          <p class="rvps2" style="border: none; padding: 0cm">Move and resize operations are allowed only from user commands, but internal operations are intercepted and neutralized.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="84">
+          <p class="rvps2" style="border: none; padding: 0cm">Locked size</p>
+        </td>
+        <td width="1459">
+          <p class="rvps2" style="border: none; padding: 0cm">It is only possible to move the window from user external commands, and the window can't be stretched or altered from internal operations.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="84">
+          <p class="rvps2" style="border: none; padding: 0cm">Anchored</p>
+        </td>
+        <td width="1459">
+          <p class="rvps2" style="border: none; padding: 0cm">The window will remain fixed in its original position.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">FPS counter</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">OFF</p>
+        </td>
+        <td width="161"></td>
+        <td width="1179"></td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">overlay</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">SHOWFPSOVERLAY</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">When checked, the FPS counter is drawn as an overlay of the program client area, in a corner of the screen and periodically and randomly moved to other cornes to avoid accidentally overlap an important screen region.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">titlebar</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">SHOWFPS</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">When checked, the FPS counter is appended to the window title.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Z order</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">default</p>
+        </td>
+        <td width="161"></td>
+        <td width="1179"></td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">unlock</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">UNLOCKZORDER</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Some games repeatedly bring their window to the top of the Z-order, meaning that they insist on remaining on top of all other windows. This flag prevents the hooked game from updating its own Z-order.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">top</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">LOCKTOPZORDER</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">This option will try to keep the game window on top.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Screen resolution</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Screen resolution affects the resolutions detected by the application. There is a choice of the following values:</p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">SVGA</p>
+        </td>
+        <td width="129">
+          <p class="rvps2" style="border: none; padding: 0cm">SUPPORTSVGA</p>
+        </td>
+        <td width="1280">
+          <p class="rvps2" style="border: none; padding: 0cm">The classic 4:3 screen resolutions starting from 320x200 up to 1280x800.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">HDMI</p>
+        </td>
+        <td width="129">
+          <p class="rvps2" style="border: none; padding: 0cm">SUPPORTHDMI</p>
+        </td>
+        <td width="1280">
+          <p class="rvps2" style="border: none; padding: 0cm">The typical 16:9 resolutions from 640x360 up to 1980x1080.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">All</p>
+        </td>
+        <td width="129">
+          <p class="rvps2" style="border: none; padding:0cm">SUPPORTSVGA|SUPPORTHDMI</p>
+        </td>
+        <td width="1280">
+          <p class="rvps2" style="border: none; padding: 0cm">The flag enables the merging of all SVGA and HDMI modes.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">Monitor native modes</p>
+        </td>
+        <td width="129">
+          <p class="rvps2" style="border: none; padding: 0cm">NATIVERES</p>
+        </td>
+        <td width="1280">
+          <p class="rvps2" style="border: none; padding: 0cm">Whatever resolution is returned from the video card.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">Custom resolution</p>
+        </td>
+        <td width="129">
+          <p class="rvps2" style="border: none; padding: 0cm">CUSTOMRES</p>
+        </td>
+        <td width="1280">
+          <p class="rvps2" style="border: none; padding: 0cm">Add a custom resolution whose size is determined by the width and height given in the adjacent text fields. BEWARE: this video mode is virtually supported with all emulated color depths for the VGA or HDMI emulated video modes, but is not valid if the NATIVERES flag is selected.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">Initial resolution</p>
+        </td>
+        <td width="129">
+          <p class="rvps2" style="border: none; padding: 0cm">INITIALRES</p>
+        </td>
+        <td width="1280">
+          <p class="rvps2" style="border: none; padding: 0cm">Set the initial screen resolution to the width and height given in the adjacent text fields.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">Max resolution</p>
+        </td>
+        <td width="129">
+          <p class="rvps2" style="border: none; padding: 0cm">MAXIMUMRES</p>
+        </td>
+        <td width="1280">
+          <p class="rvps2" style="border: none; padding: 0cm">Set the maximum screen resolution to the width and height given in the adjacent text fields.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">Limit resolution</p>
+        </td>
+        <td width="129">
+          <p class="rvps2" style="border: none; padding: 0cm">LIMITSCREENRES</p>
+        </td>
+        <td width="1280">
+          <p class="rvps2" style="border: none; padding: 0cm">Disables any resolution higher than the selected value. By default, the choice is &quot;unlimited&quot;, that means no resolution is disabled.</p>
+        </td>
+      </tr>
+    </table>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Note that 320x200 resolution is typically no longer supported, but it is not a problem to emulate it in a window, and this resolution is necessary to run some older games.</p>
+    <p>The actual list of the supported video modes depends from sevral factors. The video resolutions in emulated modes come from the selected flags (SVGA or HDMI or All) plus, when set, the additional custom resolution. In case of non emulated modes the custom resolution is not considered, since it is not a "real" one.</p>
+    <p>Finally, in both cases, the list is trimmed eliminating all resolution that exceed the limits that are set, if any.</p>
+    <p>For what concerns color depths, then, the emulated modes for 2D ddraw calls include support for 8, 16(RGB555 and RGB565), 24 and 32 bit color depths. 3D D3D functions instead only support native color depths and, on Win10, the possibility to emulate 16 bit colors in D3D8.</p>
+    <div id="topic_footer" dir="ltr">
+      <p style="margin-bottom: 0.5cm"><br />
+      <br /></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Tools</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="20180208;3533407" />
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tools_menu2.png" name="grafiikka4" align="bottom" width="330" height="259" border="0" id="grafiikka4" /></p>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Window</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">Minimize - Minimizes the currently-running hooked program to the Taskbar.</p>
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">Restore - Restores a minimized hooked program back to a window.</p>
+          <p class="rvps2" style="border: none; padding: 0cm">Close - Closes the currently-running hooked program.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Process</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">Pause - Tries to pause the program by lowering each thread priority to the minimum.</p>
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">Resume - Restore thread priorities.</p>
+          <p class="rvps2" style="border: none; padding: 0cm">Kill - Kills the last process activated by the DxWnd interface. Very useful for getting rid of games that have gone crazy because of DxWnd and refuse to terminate themselves. (Shortcut key: <b>Ctrl+Pause/Break</b>)</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Desktop taskbar</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">Hide - Hides the desktop taskbar while running a hooked application.</p>
+          <p class="rvps2" style="border: none; padding: 0cm">Show - Shows the desktop taskbar while running a hooked application.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Desktop color depth</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">On recent platforms, low desktop color depths still work but are no longer supported. This menu lets you ask the system to set the current color depth to 8, 16, 24 or 32 bits per pixel. Some color/resolution combinations may not be supported.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Recover screen mode</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">Restores the video mode that DxWnd detected at startup. This is useful for recovering from game crashes or other conditions that can change the desktop resolution or color depth.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Recover system colors</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">Recover system colors: some (typically old) programs may try to set the system colors (that is colors for window titles, borders, background panels and so forth) to custom values by using the SetSysColor call. In case this action is not disabled by the LOCKSYSCOLORS flag or recovered at game termination, this menu command brings the system colors back to the values left when DxWnd was last started.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Recover gamma ramp</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">Recover gamma ramp: some programs may alter the screen gamma ramp by using the GDI SetdeviceGammaRamp or D3D SetGammaRamp calls. In case this action is not disabled by the DISABLEGAMMARAMP flag, this menu command brings the gamma ramp curve back to the values left when DxWnd was last started.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Gamma control</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">See <a href="Gamma.html">Gamma control</a>.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Clear Compatibility flags</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">DxWnd sometimes works better if the operating system isn't attempting to run a game in any compatibility mode. This command deactivates all compatibility modes by erasing the relevant registry keys.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Run "blacker"</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">The "hide desktop background" flag creates a black window owned by the target program. This method sometimes fails when the new black window interferes with the other siblings. Blacker.exe is an alternative method based on a separate process that creates black windows independent from the target program. It is more reliable, but requires to be manually turned on and off.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Associate export files</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">Associates the .dxw file extension to the DxWnd /L: command, so that double clicking on a dxw file will import that file in the current configuration. Beware: this activity requires update of the system registry, so some AV programs can identify the operation as viral code. In addition, the effect of the command is persistent until cleared with the "Disassociate export file" command.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="149">
+          <p class="rvps2" style="border: none; padding: 0cm">Disassociate export files</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">Disassociates the .dxw file extension so clearing the effect of the former associate command.</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p style="margin-bottom: 0.5cm"><br />
+    <br /></p>
+  </div>
+</body>
+</html>

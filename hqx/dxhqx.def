@@ -1,0 +1,9 @@
+LIBRARY dxhqx
+EXPORTS
+		hqxInit				@1
+		hq2x_32				@2
+		hq3x_32				@3
+		hq4x_32				@4
+		hq2x_32_rb			@5
+		hq3x_32_rb			@6
+		hq4x_32_rb			@7

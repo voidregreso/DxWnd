@@ -1,0 +1,46 @@
+[target]
+title0=Noi siamo angeli
+path0=D:\Games\angeli\BUD\BUD.EXE
+startfolder0=
+launchpath0=
+module0=
+opengllib0=
+notes0=16bit installer doesn't work on 64bit machines. To run the game:\n\na) copy whole BUD folder from CD to HD on root directory, or\n\nb) copy whole BUD folder from CD to HD on some directory, \nthen create in there the file "setting.dat" with the following content:\n'iX' where X is the CD drive letter where the game CDRom is placed.\nIn this case the subfolders AUDIO, 3D, CREDITS, MAPPE and FILM need not\nbe copied on HD saving some space. Folders to copy are only the following:\nBUD\nMENU\nNEMICI\nOGGETTI\nPANEL\nSUONI\nTONACA\n\nP.s. game checks palette capability at very early stage, so in ase try debugger\nmode hooking.\n
+registry0=
+ver0=0
+monitorid0=-1
+filterid0=0
+renderer0=3
+coord0=0
+flag0=673185824
+flagg0=1207959592
+flagh0=20
+flagi0=138412036
+flagj0=4224
+flagk0=65536
+flagl0=32768
+flagm0=0
+flagn0=17825796
+flago0=0
+tflag0=0
+dflag0=0
+posx0=50
+posy0=50
+sizx0=800
+sizy0=600
+maxfps0=0
+initts0=0
+winver0=0
+maxres0=-1
+swapeffect0=0
+maxddinterface0=7
+slowratio0=2
+scanline0=0
+initresw0=800
+initresh0=600
+[stamp]
+version=v2.04.43.a2
+time=Fri Sep 08 10:41:34 2017
+
+
+

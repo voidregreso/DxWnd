@@ -1,0 +1,37 @@
+#toc_container {
+background:#f1f1f1 none repeat scroll 0 0;
+border:1px solid #aaa;
+display:table;
+font-size:9.5pt;
+font-family:Arial, Helvetica, sans-serif;
+margin-bottom:1em;
+width:auto;
+padding:10px;
+}
+
+.toc_title {
+font-weight:700;
+text-align:center;
+}
+
+a:link,a:visited {
+background-color:#f1f1f1;
+color:#000;
+text-align:center;
+text-decoration:none;
+display:inline-block;
+padding:1px 2px;
+}
+
+a:hover,a:active {
+background-color:#ADD8E6;
+}
+
+p {
+display:block;
+margin:1px 0;
+}
+
+a:focus {
+color:blue;
+}

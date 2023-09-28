@@ -1,0 +1,49 @@
+[target]
+title0=Strength & Honour
+path0=D:\Program Files (x86)\Magitech\SNH\Strength & Honour.exe
+launchpath0=
+module0=
+opengllib0=
+notes0=Working ok only fixing size & resolution at 1024 x 768 !!!
+ver0=7
+coord0=0
+flag0=681574434
+flagg0=1745223680
+flagh0=65554
+flagi0=138412036
+flagj0=528576
+flagk0=0
+tflag0=0
+initx0=0
+inity0=0
+minx0=0
+miny0=0
+maxx0=0
+maxy0=0
+posx0=50
+posy0=50
+sizx0=1024
+sizy0=768
+maxfps0=0
+initts0=0
+winver0=0
+maxres0=-1
+swapeffect0=0
+startfolder0=
+registry0=
+monitorid0=0
+flagl0=0
+flagm0=0
+flagn0=4
+flago0=0
+dflag0=0
+maxddinterface0=7
+slowratio0=1
+scanline0=1
+initresw0=1024
+initresh0=768
+[stamp]
+version=v2.04.37.a0
+time=Mon Jul 17 08:46:10 2017
+
+

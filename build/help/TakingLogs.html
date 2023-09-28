@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Taking Logs</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                H1 { color: #000000; font-style: normal; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <p></p>
+  <div id="topic_content" dir="ltr">
+    <h3 class="western"><u>Taking Logs</u></h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Preface:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Though DxWnd is developed trying to make its use as easy and reliable as possible, in reality the variety of platforms, game engines, game releases and configurations make each case a real challenge and it will happen quite often that things won't be ok at first attempt. Because of the complexity of the task, the help provided by log files is really precious, and even though they might be really obscure for most DxWnd users, they can be grabbed and posted to the DxWnd forum to get some help. The following explains how to do this.</p>
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Setting up the tool:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">DxWnd logs can be activated from the DxWnd interface in expert mode. So, if not already done, click on Options-&gt;Expert mode</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_options_menu2.png" name="grafiikka4" align="bottom" width="320" height="218" border="0" id="grafiikka4" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Then, the program configuration will show the &quot;Logs tab&quot; where the flags for logging options can be set. In most cases the optimal configuration will be the one shown here:</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_logs1.png" name="grafiikka5" align="bottom" width="503" height="535" border="0" id="grafiikka5" /></p>
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Log production:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">The logs are written in the dxwnd.log file located in the game folder (if that folder is writable, when not possible the dxwnd.log file will be written elsewhere) while the game is running. So, once configured, run the game and look for the dxwnd.log file.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Since logs could be very verbose and write huge quantity of text, it is advisable to run the game for as little time as possible, interrupting the game session as soon as the problem occurs. Then, the log size can be reduced by file compression: the log is quite repetitive and compression rate is usually very high. Please, do not add more flags if not asked: that would easily generate more useless text making it more difficult to read and understand.</p>
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Special cases:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">When hunting an occasional bug it may be inconvenient to get huge logs during the long time it takes until the problem occurs. In this situation it is possible to write the logs in a &quot;circular&quot; mode: in this case, two log files will be created and periodically swapped and overwritten, so that their size is trimmed to a maximum value. In this case it is necessary to collect and send both log files (named dxwnd.log and dxwnd.0.log).</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_logs2.png" name="grafiikka6" align="bottom" width="220" height="145" border="0" id="grafiikka6" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">If there are problems with the audio cd emulation, it is usually useless to grab informations about anything but the audio operations. In this case you should set only the &quot;Sound&quot; flag.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_logs3.png" name="grafiikka7" align="bottom" width="435" height="210" border="0" id="grafiikka7" /></p>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p><br /></p>
+  </div>
+</body>
+</html>

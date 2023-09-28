@@ -1,0 +1,42 @@
+[target]
+title0=Worms 3D
+path0=D:\Games\Worms 3D\bin\Worms3D.exe
+startfolder0=D:\Games\Worms 3D
+launchpath0=
+module0=
+opengllib0=
+notes0=It is fundamental that the game is run from the frontend folder, one level upward:\nsee "Start folder path" field.
+registry0=
+ver0=0
+monitorid0=-1
+coord0=0
+flag0=673202182
+flagg0=1208221696
+flagh0=20
+flagi0=138412036
+flagj0=4224
+flagk0=65536
+flagl0=32768
+flagm0=0
+flagn0=4
+flago0=0
+tflag0=0
+dflag0=0
+posx0=50
+posy0=50
+sizx0=800
+sizy0=600
+maxfps0=0
+initts0=0
+winver0=0
+maxres0=0
+swapeffect0=0
+maxddinterface0=7
+slowratio0=2
+scanline0=0
+initresw0=800
+initresh0=600
+[stamp]
+version=2.04.27.a0
+time=Thu Apr 27 17:48:13 2017
+

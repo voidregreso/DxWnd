@@ -1,0 +1,10 @@
+LIBRARY "dinput"
+EXPORTS
+DirectInputCreateA = 		FakeDirectInputCreateA			@1
+DirectInputCreateW = 		FakeDirectInputCreateW			@2
+DirectInputCreateEx =		FakeDirectInputCreateEx			@3	
+DllCanUnloadNow =			FakeDllCanUnloadNow				PRIVATE
+DllGetClassObject =			FakeDllGetClassObject			PRIVATE
+DllRegisterServer =			FakeDllRegisterServer			PRIVATE
+DllUnregisterServer =		FakeDllUnregisterServer			PRIVATE
+

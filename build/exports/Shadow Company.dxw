@@ -1,0 +1,48 @@
+[target]
+title0=Shadow Company
+path0=D:\Games\shadow_company\shadow.exe
+startfolder0=
+launchpath0=
+module0=
+opengllib0=
+notes0=Needs ZBufferBitDepths flags to bypass initial checks
+registry0=\n[HKEY_LOCAL_MACHINE\Software\Sinister Games]\n\n[HKEY_LOCAL_MACHINE\Software\Sinister Games\Shadow Company]\n\n[HKEY_LOCAL_MACHINE\Software\Sinister Games\Shadow Company\1.0.0.0]\n\n
+ver0=0
+monitorid0=-1
+filterid0=0
+renderer0=3
+coord0=0
+flag0=-1474297820
+flagg0=1208221696
+flagh0=1044
+flagi0=1210056708
+flagj0=4224
+flagk0=2293760
+flagl0=8388608
+flagm0=0
+flagn0=17825796
+flago0=0
+tflag0=0
+dflag0=0
+posx0=50
+posy0=50
+sizx0=800
+sizy0=600
+maxfps0=0
+initts0=0
+winver0=0
+maxres0=-1
+swapeffect0=0
+maxddinterface0=7
+slowratio0=2
+scanline0=0
+initresw0=640
+initresh0=480
+[stamp]
+version=v2.04.44.a0
+time=Thu Sep 14 10:02:34 2017
+
+
+
+
+

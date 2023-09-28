@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Locale</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                H1 { color: #000000; font-style: normal; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <p></p>
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_locale.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="168">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook Locale</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">HOOKLOCALE</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Enables locale API hooking.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="168">
+          <p class="rvps2" style="border: none; padding: 0cm">Country</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm"></p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Placeholder for country id. Currently unused. For a list of Country Ids see WinNls.h.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="168">
+          <p class="rvps2" style="border: none; padding: 0cm">Language</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm"></p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">System Language id. DxWnd pretends that the program is running in the context of the selected language. For a list of valid Language ids refer to <a href="https://docs.microsoft.com/en-us/windows/win32/intl/language-identifier-constants-and-strings" target="_blank">here</a>.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="168">
+          <p class="rvps2" style="border: none; padding: 0cm">CodePage</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm"></p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">CodePage id. DxWnd pretends that the program is running in the context of the selected CodePage. For a list of CodePage ids supported in the current machine use the CodePage.exe tool or refer to <a href="https://docs.microsoft.com/en-us/windows/win32/intl/code-page-identifiers" target="_blank">here</a>.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="168">
+          <p class="rvps2" style="border: none; padding: 0cm">Win class locale glPixelZoom args</p>
+        </td>
+        <td width="141">
+          <p class="rvps2" style="border: none; padding: 0cm">CLASSLOCALE</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">This flag enables CodePage transformation on window class data. Depending on the situation, it may result better to set this flag rather than not. It impacts essentially on the program's window title bar.</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p><br /></p>
+  </div>
+</body>
+</html>

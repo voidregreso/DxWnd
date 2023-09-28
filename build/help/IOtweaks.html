@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>I/O</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                H1 { color: #000000; font-style: normal; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <p></p>
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_io.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="174">
+          <p class="rvps2" style="border: none; padding: 0cm">Fake HD drive</p>
+        </td>
+        <td width="135">
+          <p class="rvps2" style="border: none; padding: 0cm">FAKEHDDRIVE</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Every file searched with a full path starting with X:\ where X is the drive letter selected in the combo to the right (default C:\) is searched replacing X:\ with the path configured in the field to the right textbox. This makes it possible, for instance, to install in custom folders for old games that only work if installed below C:, or to point to game files in deeper paths that are not supported by the program.</p>
+          <p>A question mark as first character in the path field stands for the target game folder (for instance, the value ?\hd\ means te hd subfolder of the folder game where the hooked program is located).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="174">
+          <p class="rvps2" style="border: none; padding: 0cm">Fake CD drive</p>
+        </td>
+        <td width="135">
+          <p class="rvps2" style="border: none; padding: 0cm">FAKECDDRIVE</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Same as above, but with reference to fake CDRom drive X:\ (default D:\)</p>
+          <p>In addition, all write access I/O operations on these files will return an error to simulate an readonly CD device type.</p>
+          <p>At all practical effects, the program will detect a CD-rom file system type.</p>
+          <p>BEWARE: in case of multi-CD configuration, the field holds the pathname of the first virtual CD file system. All additional CD file systems will be set by adding a suffix nn to this value with nn ranging from 02 to 09. For instance, if the field is set as "c:\myCD\cd", the files for CD2 will be serached in "c:\myCD\cd02" and so forth up to CD9 searched in "c:\myCD\cd09". It should be noted that while for the first/only CD terminating the field value with a backslash or not is indifferent, for all following virtual disks that will be different since "c:\myCD\cd02" is not the same folder as "c:\myCD\cd\02".</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="174">
+          <p class="rvps2" style="border: none; padding: 0cm">CD label</p>
+        </td>
+        <td width="135">
+          <p class="rvps2" style="border: none; padding: 0cm"></p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Defines the CD label (that is the volume name) of the CD virtually inserted in the fake CD drive</p>
+          <p>BEWARE: in case of multi-CD configuration, the field holds the labels of all CDs separated by a semicolumn ";". For instance, CD labels for the game "Zork Nemesis - the Forbidden Lands" will have to be set as "ZORKNEM_I;ZORKNEM_II;ZORKNEM_III".</p>
+          <p>BEWARE: the space character or any other character but the semicolumn are not treated as separators.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="174">
+          <p class="rvps2" style="border: none; padding: 0cm">Remap system folders</p>
+        </td>
+        <td width="135">
+          <p class="rvps2" style="border: none; padding: 0cm">REMAPSYSFOLDERS</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Remaps the pathnames of files that are located in the Windows system folders to a pathname local to the game folder. For instance, the pathname of the Windows system folder that is usually located in "C:\Windows" is translated to the Windows subfolder of the current folder. This prevents writing / reading files in the system folders and could be helpful to make portable applications with local configuration data. It should be noted that the flag may require early hooking to intercept operations before the first window creation. In addition, it is not always garanteed that all file accesses in system folders could be intercepted and redirected. All remapping folders will have to be created and be existing before the flag usage.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="174">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix buffered I/O after Win98</p>
+        </td>
+        <td width="135">
+          <p class="rvps2" style="border: none; padding: 0cm">BUFFEREDIOFIX</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Windows 98 was the last platform to support asynchronous disk I/O from devices such as CD-ROMs. This flag suppresses requests for asynchronous mode, avoiding errors from this operation.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="174">
+          <p class="rvps2" style="border: none; padding: 0cm">Set CDROM Drive Type</p>
+        </td>
+        <td width="135">
+          <p class="rvps2" style="border: none; padding: 0cm">CDROMDRIVETYPE</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Simulates each disk device to appear as a CDROM type. This allows you to copy the content of some CDs onto a hard disk and override the disk type controls that form some very basic copy protection schemes.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="174">
+          <p class="rvps2" style="border: none; padding: 0cm">Hide empty CDROM drives</p>
+        </td>
+        <td width="135">
+          <p class="rvps2" style="border: none; padding: 0cm">HIDECDROMEMPTY</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Some old games didn't handle the possibility of having multiple CDROM devices and simply look for the game in the first available CDROM. If you have physical and virtual CDROM devices in your system, it may become complicated to insert a physical CD on a virtual device (or vice versa). This flag removes any CDROM devices that don't mount a CD from the list of available devices, so that you can simply unmount all disks except for the desired one.</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p><br /></p>
+  </div>
+</body>
+</html>

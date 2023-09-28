@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Command line arguments</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                H1 { color: #000000; font-style: normal; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <p></p>
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm">DxWnd accepts some command line arguments.</p>
+    <p>There are two sets of arguments, for DxWnd in server mode or client mode: DxWnd in server mode is a single instance of the process that keeps running in foreground or in icon tray. DxWnd in client mode is a used to send a single command to the server mode instance and immediately terminate. Client mode commands implement the same functionalities available from the interactive DxWnd GUI, but are useful to be inserted in scripts.</p>
+    <p>NOTE: The command after the slash character is not case sensitive, that is, for instance /E and /e are identical commands.</p>
+    <p>Server-mode arguments. You can use none, any, or all of them to alter the program's behavior:</p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/T</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Starts DxWnd iconized in the System Tray (see <a href="DxWndintheSystemTray.html">DxWnd in the System Tray</a>).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/I</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Starts DxWnd initially in the IDLE state, so that it doesn't affect the programs until you manually issue a Hook &gt; Start command.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/C:&lt;filename&gt;</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Uses the &lt;filename&gt; configuration file instead of the default config.ini file. In any case, the configuration file must be located in DxWnd's working directory.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/lang=&lt;xx&gt;</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">If you need a localized version of DxWnd, this argument causes DxWnd to load all resource text from the external DLLs, given in Resources_&lt;xx&gt;.dll.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/debug</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Enables debug features. Not recommended!</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/R:n</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Automatically starts DxWnd iconized to the system tray, runs the nth program in the configuration file, and exits DxWnd.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/Q</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Quiet mode. DxWnd will not produce message dialogs.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/H</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">GUI stays hidden in the icon tray after program termination.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/A</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Auto hide: DxWnd GUI minimize itself upon each program activation and resumes after its termination.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/N</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">No icon spinning: DxWnd icon in icon tray doesn't show the active icon spinning effect that is made by changing the red icons with a black bar in quick sequence.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/X</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">when DxWnd runs iconized, suppresses the DxWnd icon in the icon tray. Beware: in this way it could become impossible to grab the DxWnd window again to terminate it, so in case you need to stop it, DxWnd will have to be terminated by the "DxWnd /e" command or by killing the DxWnd process with the task manager.</p>
+        </td>
+      </tr>
+    </table><br />
+    <p>Client-mode arguments. You should use only one of them per each client-mode invocation:</p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/E</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Terminate any existing session of DxWnd. To make it possible to run a new session. Beware: configuration changes may not be saved!</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/L:&lt;filename&gt;</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Loads the &lt;filename&gt; dxw file adding it to the end of the configuration list of the running DxWnd session.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/Y:&lt;filename&gt;</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">As like /L command, loads the &lt;filename&gt; dxw file adding it to the end of the configuration list of the running DxWnd session, but also runs the added program.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/Y:#&lt;n&gt;</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Runs the &lt;n&gt;th program's entry in the configuration list of the running DxWnd server session.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/Z</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">BEWARE: Completely erases the current program list.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="163">
+          <p class="rvps2" style="border: none; padding: 0cm">/S</p>
+        </td>
+        <td width="1380">
+          <p class="rvps2" style="border: none; padding: 0cm">Silently (that is, without asking for confirmation) saves the current task configuration.</p>
+        </td>
+      </tr>
+    </table><br />
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Tip:</b> You can create a batch file (.bat or .cmd) on your desktop with the following lines in it:</p>
+    <table width="50%" border="1" cellpadding="2" cellspacing="2">
+      <tr>
+        <td>
+          <p><b>cd C:\Dxwnd</b></p>
+          <p><b>dxwnd.exe /R:1</b></p>
+        </td>
+      </tr>
+    </table>
+    <p>(This example assumes that Dxwnd is installed in "C:\Dxwnd" folder and the first configured game "R:1" is run.)</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Alternatively you could create a shortcut from Dxwnd.exe to the desktop and edit the "Target" field to read:</p>
+    <table width="50%" border="1" cellpadding="2" cellspacing="2">
+      <tr>
+        <td>
+          <p><b>C:\Dxwnd\dxwnd.exe /R:1</b></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p><br /></p>
+  </div>
+</body>
+</html>

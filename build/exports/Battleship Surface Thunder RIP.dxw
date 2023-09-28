@@ -1,0 +1,43 @@
+[target]
+title0=Battleship Surface Thunder RIP
+path0=D:\Games\Battleship\Battleship2.exe
+startfolder0=
+launchpath0=
+module0=
+opengllib0=
+notes0=
+registry0=\n[HKEY_CURRENT_USER\Software\Hasbro Interactive]\n\n[HKEY_CURRENT_USER\Software\Hasbro Interactive\BattleShip SURFACE THUNDER]\n\n[HKEY_CURRENT_USER\Software\Hasbro Interactive\BattleShip SURFACE THUNDER\Setup]\n"LanguageID"="English"\n"Version"=".091"\n"File"="BattleShip2.exe"\n\n
+ver0=0
+monitorid0=-1
+coord0=0
+flag0=673185826
+flagg0=1208221696
+flagh0=1044
+flagi0=1212153860
+flagj0=4224
+flagk0=65536
+flagl0=0
+flagm0=0
+flagn0=4
+flago0=0
+tflag0=0
+dflag0=0
+posx0=50
+posy0=50
+sizx0=800
+sizy0=600
+maxfps0=0
+initts0=0
+winver0=0
+maxres0=0
+swapeffect0=0
+maxddinterface0=7
+slowratio0=2
+scanline0=0
+initresw0=800
+initresh0=600
+[stamp]
+version=2.04.27.a0
+time=Wed Apr 26 22:51:22 2017
+
+

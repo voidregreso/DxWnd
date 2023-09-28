@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>SDL</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                H1 { color: #000000; font-style: normal; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <p></p>
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_sdl.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook SDL</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">HOOKSDLLIB</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook games using the SDL library.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook SDL2</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">HOOKSDL2LIB</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook games using the SDL2 library.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">SDL surface emulation</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">SDLEMULATION</p>
+        </td>
+        <td width="1171"></td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Force stretching</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">SDLFORCESTRETCH</p>
+        </td>
+        <td width="1171"></td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Extend SDL Hook</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">EXTENDSDLHOOK</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">When set, DxWnd search for system calls to be hooked doesn't stop to SDL library but extends to SDL dependencies. This way you can hook also DirectX or OpenGL linked to the SDL modules.</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p><br /></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Configuration file</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3 { color: #000000 }
+                H3.cjk { font-family: "SimSun" }
+                H3.ctl { font-family: "Mangal" }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm">The dxwnd.ini configuration file holds an almost complete configuration for DxWnd (some registry tricks need to be stored in the dxwnd.reg file instead), but needs no manual editing since almost all of its contained information comes from the DxWnd GUI.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">There are a few important exceptions for settings that you might want to edit manually.</p>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Language</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="187">
+          <p class="rvps2" style="border: none; padding: 0cm">lang=&lt;specification&gt;</p>
+        </td>
+        <td width="1356">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">Sets the DxWnd GUI language with a selector for the localization DLL. &quot;default&quot; will load the embedded English text. &quot;automatic&quot; will load the language pack corresponding to the system locale. Any &quot;XYZ&quot; string will load the corresponding &quot;Resources_XYZ.dll&quot; language port. Currently unsupported (available translation packages are no longer up to date).</p>
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">For older versions, the following languages are supported:</p>
+          <ul>
+            <li>
+              <p style="border: none; padding: 0cm">EN &ndash; English (default language)</p>
+            </li>
+            <li>
+              <p style="border: none; padding: 0cm">CN &ndash; Chinese</p>
+            </li>
+            <li>
+              <p style="margin-bottom: 0.5cm; border: none; padding: 0cm">IT &ndash; Italian</p>
+            </li>
+          </ul>
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">When you set a lang=&lt;specification&gt; specification, DxWnd looks for and loads the resources in the Resources_&lt;specification&gt;.dll file, so anyone can build and use a custom language pack.</p>
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">lang=default disables resource loading, and the program will use the default and built-in English pack.</p>
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">lang=automatic makes DxWnd search for the current UI language and try to map it to the available language packs. If no corresponding pack is available, it switches to the default (English) behavior.</p>
+          <p class="rvps2" style="border: none; padding: 0cm">This setting is always overridden by a /lang=&lt;specification&gt; command line argument.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="187">
+          <p class="rvps2" style="border: none; padding: 0cm">debug=&lt;mode&gt;</p>
+        </td>
+        <td width="1356">
+          <p class="rvps2" style="border: none; padding: 0cm">Boolean, defaulting to false. debug=1 activates the configuration debug tab. Warning: debug options, when set, are kept even if debug is cleared and the debug is no longer visible.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="187">
+          <p class="rvps2" style="border: none; padding: 0cm">multiprocesshook=&lt;mode&gt;</p>
+        </td>
+        <td width="1356">
+          <p class="rvps2" style="border: none; padding: 0cm">Boolean, defaulting to false. multiprocesshook=1 allows multiple programs to run simultaneously on different windows. Beware that not all programs can work this way and it's likely to cause problems with resources that can't be shared, such as the mouse.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="187">
+          <p class="rvps2" style="border: none; padding: 0cm">checkadmin=&lt;mode&gt;</p>
+        </td>
+        <td width="1356">
+          <p class="rvps2" style="border: none; padding: 0cm">Boolean, defaulting to false. checkadmin=1 causes DxWnd to autodetect its own administrator permissions at startup and propose a self-elevation if missing.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Position</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">The DxWnd window position and size. Whenever you move or stretch the GUI, the new coordinates are stored here. The format is as follows:</p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="159">
+          <p class="rvps2" style="border: none; padding: 0cm">posx=&lt;x0&gt;</p>
+        </td>
+        <td width="1384">
+          <p class="rvps2" style="border: none; padding: 0cm">Initial x (horizontal) position of the DxWnd GUI. When DxWnd is terminated and is not in fullscreen mode, this flag is updated to store the most recent x position, to be used next time you start the program.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="159">
+          <p class="rvps2" style="border: none; padding: 0cm">posy=&lt;y0&gt;</p>
+        </td>
+        <td width="1384">
+          <p class="rvps2" style="border: none; padding: 0cm">Same as posx, for the y (vertical) coordinate</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="159">
+          <p class="rvps2" style="border: none; padding: 0cm">sizx=&lt;width&gt;</p>
+        </td>
+        <td width="1384">
+          <p class="rvps2" style="border: none; padding: 0cm">Same as posx, but recording the window's width. The initial width is forced to a minimum of 320 pixels.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="159">
+          <p class="rvps2" style="border: none; padding: 0cm">sizy=&lt;height&gt;</p>
+        </td>
+        <td width="1384">
+          <p class="rvps2" style="border: none; padding: 0cm">Same as posx, but recording the window's height. The initial height is forced to a minimum of 200 pixels.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Texture</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="131">
+          <p class="rvps2" style="border: none; padding: 0cm">MinTexX=&lt;value&gt;</p>
+        </td>
+        <td width="1412">
+          <p class="rvps2" style="border: none; padding: 0cm">Minimum texture width for texture processing (dump, hack).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="131">
+          <p class="rvps2" style="border: none; padding: 0cm">MaxTexX=&lt;value&gt;</p>
+        </td>
+        <td width="1412">
+          <p class="rvps2" style="border: none; padding: 0cm">Maximum texture width for texture processing (dump, hack). Zero value means infinite.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="131">
+          <p class="rvps2" style="border: none; padding: 0cm">MinTexY=&lt;value&gt;</p>
+        </td>
+        <td width="1412">
+          <p class="rvps2" style="border: none; padding: 0cm">Minimum texture height for texture processing (dump, hack).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="131">
+          <p class="rvps2" style="border: none; padding: 0cm">MaxTexY=&lt;value&gt;</p>
+        </td>
+        <td width="1412">
+          <p class="rvps2" style="border: none; padding: 0cm">Maximum texture height for texture processing (dump, hack). Zero value means infinite.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Keymapping</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Sets the DxWnd hot key mapping. The format is as follows:</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">&lt;function&gt;=0x&lt;keycode&gt;</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">The available values represent the hex key code and range from 0x70 (Alt-F1) to 0x7C (Alt-F12).</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">These are the available hot keys:</p>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="164">
+          <p class="rvps2" style="border: none; padding: 0cm">timetoggle</p>
+        </td>
+        <td width="1372">
+          <p class="rvps2" style="border: none; padding: 0cm">Toggle time stretching.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="164">
+          <p class="rvps2" style="border: none; padding: 0cm">altf4</p>
+        </td>
+        <td width="1372">
+          <p class="rvps2" style="border: none; padding: 0cm">Terminate the program, such as by typing Alt-F4.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="164">
+          <p class="rvps2" style="border: none; padding: 0cm">timeslow</p>
+        </td>
+        <td width="1372">
+          <p class="rvps2" style="border: none; padding: 0cm">Decrease time speed.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="164">
+          <p class="rvps2" style="border: none; padding: 0cm">timefast</p>
+        </td>
+        <td width="1372">
+          <p class="rvps2" style="border: none; padding: 0cm">Increase time speed.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="164">
+          <p class="rvps2" style="border: none; padding: 0cm">cliptoggle</p>
+        </td>
+        <td width="1372">
+          <p class="rvps2" style="border: none; padding: 0cm">Toggle cursor clipping.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="164">
+          <p class="rvps2" style="border: none; padding: 0cm">refresh</p>
+        </td>
+        <td width="1372">
+          <p class="rvps2" style="border: none; padding: 0cm">Refresh the screen.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="164">
+          <p class="rvps2" style="border: none; padding: 0cm">logtoggle</p>
+        </td>
+        <td width="1372">
+          <p class="rvps2" style="border: none; padding: 0cm">Toggle logging.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="164">
+          <p class="rvps2" style="border: none; padding: 0cm">fpstoggle</p>
+        </td>
+        <td width="1372">
+          <p class="rvps2" style="border: none; padding: 0cm">Show or hide the FPS.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="164">
+          <p class="rvps2" style="border: none; padding: 0cm">plocktoggle</p>
+        </td>
+        <td width="1372">
+          <p class="rvps2" style="border: none; padding: 0cm">Lock or unlock the window position.</p>
+        </td>
+      </tr>
+    </table>
+    <div id="topic_footer" dir="ltr">
+      <p style="margin-bottom: 0.5cm"><br />
+      <br /></p>
+    </div>
+  </div>
+</body>
+</html>

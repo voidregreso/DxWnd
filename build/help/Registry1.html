@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Registry</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                H1 { color: #000000; font-style: normal; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <p></p>
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_registry2.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">Emulate registry</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">EMULATEREGISTRY</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Intercepts registry read operations so that missing entries are filled in by the values in the DxWnd.reg file.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">Override registry</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">OVERRIDEREGISTRY</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Intercepts registry read operations so that missing and existing entries are filled in by the values in the DxWnd.reg file.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">Set KEY_WOW64_64KEY flag</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">WOW64REGISTRY</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Set the KEY_WOW64_64KEY value in registry system calls so that they are forced to search in the native 64-bit section of the registry in 64-bit platforms.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="198">
+          <p class="rvps2" style="border: none; padding: 0cm">Set KEY_WOW64_32KEY flag</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">WOW32REGISTRY</p>
+        </td>
+        <td width="1191">
+          <p class="rvps2" style="border: none; padding: 0cm">Set the KEY_WOW64_32KEY value in registry system calls so that they are forced to search in the 32-bit section of the registry in 64-bit platforms.</p>
+        </td>
+      </tr>
+    </table>
+    <p class="rvps2" style="margin-bottom: 0.5cm">This area allows you to record virtual registry keys for the hooked program, in a text format similar (but not identical) to the one used by registry tools like regedit or regwin32. If the &quot;Emulated registry&quot; flag is set, these keys/values will be read whenever they can't be retrieved from the actual registry. If the &quot;Override registry&quot; flag is set, these values will be used even if corresponding values already exist in the actual registry.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Note: in the virtual registry text DxWnd allows the usage of the special token \{path} that is replaced with the game execution folder. This makes it possible to write relocatable registry scripts that will work no matter where the program is installed.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">IMPORTANT NOTE: DxWnd gets the virtual registry from the SAVED dxwnd.ini file, so you must save these settings before any changes can take effect.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">If you save a configuration with any text in the Virtual registry, the Main tab will add an icon with an appearance of a stack of blue cubes to the immediate right of the Launch field:</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_registry_icon2.png" name="grafiikka5" align="bottom" width="503" height="219" border="0" id="grafiikka5" /></p>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p><br /></p>
+  </div>
+</body>
+</html>

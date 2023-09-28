@@ -1,0 +1,45 @@
+[target]
+title0=Fifth element, the
+path0=D:\Games\5th_Element\5TH\PC.EXE
+startfolder0=
+launchpath0=
+module0=
+opengllib0=
+notes0=Before running, set 3D Hardware acceleration with 3DSetup.exe\nNeeds "Intercept imagehlp.dll" flag \nNeeds "Fix LoadLibray error" to avoid fake PowerVR detection\nNeeds "Support offscreen 3D" 
+registry0=
+ver0=0
+monitorid0=-1
+filterid0=0
+renderer0=3
+coord0=0
+flag0=740433952
+flagg0=1208221696
+flagh0=20
+flagi0=138412036
+flagj0=4736
+flagk0=65536
+flagl0=0
+flagm0=301990912
+flagn0=1048580
+flago0=0
+tflag0=0
+dflag0=0
+posx0=50
+posy0=50
+sizx0=800
+sizy0=600
+maxfps0=0
+initts0=0
+winver0=0
+maxres0=0
+swapeffect0=0
+maxddinterface0=7
+slowratio0=2
+scanline0=0
+initresw0=800
+initresh0=600
+[stamp]
+version=v2.04.47
+time=Thu Sep 21 16:57:29 2017
+
+

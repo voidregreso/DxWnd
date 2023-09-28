@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Libs</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3 { color: #000000 }
+                H3.cjk { font-family: "SimSun" }
+                H3.ctl { font-family: "Mangal" }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_libs4.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Remap Client Rect</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">CLIENTREMAPPING</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Enabled by default. Makes DxWnd remap the window client coordinates so that the program receives the same values as if the program was running in fullscreen mode.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Scale font size</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXTEXTOUT</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Tries to scale font parameters to fit the window stretching.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">High quality fonts</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">QUALITYFONTS</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Flag to force antialiasing font style.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppress FillRect</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">NOFILLRECT</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">It is quite common for a fullscreen program to start its activities by clearing the desktop through a FillRect of the whole desktop area. Though this operation is usually intercepted and redirected to the windowed area, if it fails this flag bypasses that FillRect call.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Syncronize GDI to ddraw palette</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">SYNCPALETTE</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Makes DirectDraw palette emulation aware of palette changes made through GDI calls.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppress Win common errors</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">NOWINERRORS</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Makes system libraries return success in all cases where the error could depend on the windowed environment, but can be safely ignored. Currently, it only suppresses errors in the DestroyWindow user32 call.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppress message dialogs</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">NODIALOGS</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Useful for suppressing error messages.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Stretch dialogs</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">STRETCHDIALOGS</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Intercepts the dialogs creation calls and scales the dialog definition to fit the current scaling ratio. The operation is performed only once at dialog creation only, so any further window stretching operation won't be reflected in a updated dialog size.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Invalidate full rect</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">INVALIDATEFULLRECT</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Extends the Invalidate RECT parameter so that the whole window is always updated.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Bypass setting the Pixel Format</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">NOSETPIXELFORMAT</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">By default, when an emulated mode is selected, the SetPixelFormat operation is bypassed to avoid useless interferences with the desktop settings. However, in some cases this operation is required to make the program working correctly, so this flag forces the SetPixelFormat operation whenever requested.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Scale CBT Windows Hook</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">SCALECBTHOOK</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Scales the window coordinates sent to the CBT hook callback. Fixes "Spearhead" window calculations that affect both the video rendering and the mouse control.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">GDI</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">These flags determine the strategy for managing pure GDI programs or, in the most complicated case, hybrid games that mix GDI calls with other renderers like DirectDraw or Direct3D.</p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">No GDI handling</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">GDINONE</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Disables video-related GDI/user32 API hooking.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Scaled GDI calls</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">HOOKGDI</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Scales GDI API coordinates to fit the window stretching.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Emulated Device Context</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">GDIEMULATEDC</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Handle an emulated GDI device context.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Share ddraw and GDI DC</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">SHAREDDC</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Shares the window DC (device context) with the DirectDraw primary surface DC. These contexts can have very different interactions in fullscreen and windowed modes. In windowed mode, what usually happens is that one DC layer overlaps the other and produces flickering. This option merges the graphic content of GDI on top of the primary surface of DirectDraw.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix clipper area in shared DC</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXCLIPPERAREA</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">In SHAREDDC mode, this flag tries to compensate for clipping problems between the program window and other windows on the desktop. It is not currently fully implemented, so it is discouraged for now.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="182">
+          <p class="rvps2" style="border: none; padding: 0cm">Hybrid</p>
+        </td>
+        <td width="128">
+          <p class="rvps2" style="border: none; padding: 0cm">SHAREDDCHYBRID</p>
+        </td>
+        <td width="1227">
+          <p class="rvps2" style="border: none; padding: 0cm">Reduces &quot;Star Treck: Armada&quot; problems.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Color management</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">Lock Sys Colors</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">LOCKSYSCOLORS</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppresses the SetSysColors API that changes the colors of system elements, such as window borders and panel backgrounds. Some fullscreen games change these colors when they start and revert them when they exit, which is unnoticeable when these games run in fullscreen mode but very noticeable when they are run in a window. The only known game that needs this option is Western Front.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">Lock reserved palette entries</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">LOCKRESERVEDPALETTE</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">This option simulates a lock on the system palette entries (usually 20 colors, corresponding to 0-9 and 246-255 in the 8-bit, 256-color palette entries), preventing DirectDraw calls from updating these values.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">Disable setting gamma ramp</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">DISABLEGAMMARAMP</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Prevents the API from altering the default gamma ramp, making the screen lighter or darker. Since the API affects the whole screen, this flag is mainly useful to prevent a game's gamma settings from affecting your entire desktop.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">PAL DIB Emulation</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">PALDIBEMULATION</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Emulate 8bit palettized DIBs: fixes &quot;G-Nome&quot;.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="197">
+          <p class="rvps2" style="border: none; padding: 0cm">Refresh on palette Realize</p>
+        </td>
+        <td width="161">
+          <p class="rvps2" style="border: none; padding: 0cm">REFRESHONREALIZE</p>
+        </td>
+        <td width="1179">
+          <p class="rvps2" style="border: none; padding: 0cm">Flag to properly handle &quot;Titanic Adventure out of time&quot;.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">MM (multimedia)</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="172">
+          <p class="rvps2" style="border: none; padding: 0cm">Remap MCI coordinates</p>
+        </td>
+        <td width="111">
+          <p class="rvps2" style="border: none; padding: 0cm">REMAPMCI</p>
+        </td>
+        <td width="1254">
+          <p class="rvps2" style="border: none; padding: 0cm">Finds and scales the movie coordinates that may be embedded in the MciSendString command string. It may fix movie sizes when they are played using the MciSendString winmm call.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="172">
+          <p class="rvps2" style="border: none; padding: 0cm">No movies</p>
+        </td>
+        <td width="111">
+          <p class="rvps2" style="border: none; padding: 0cm">NOMOVIES</p>
+        </td>
+        <td width="1254">
+          <p class="rvps2" style="border: none; padding: 0cm">Skips movies whenever possible - that is, when performed through explicit movie handling calls.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="172">
+          <p class="rvps2" style="border: none; padding: 0cm">Stretch ActiveMovie window</p>
+        </td>
+        <td width="111">
+          <p class="rvps2" style="border: none; padding: 0cm">STRETCHMOVIES</p>
+        </td>
+        <td width="1254">
+          <p class="rvps2" style="border: none; padding: 0cm">Several window classes are devoted to playing multimedia. This flag detects the known multimedia windows and stretches their size to cover the full main window area.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="172">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix movies color depth</p>
+        </td>
+        <td width="111">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXMOVIECOLOR</p>
+        </td>
+        <td width="1254">
+          <p class="rvps2" style="border: none; padding: 0cm">Fixes the color depth of VFW (Video For Windows) movies by forcing their value to the color depth of the virtual desktop.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="172">
+          <p class="rvps2" style="border: none; padding: 0cm">Bypass MCI calls</p>
+        </td>
+        <td width="111">
+          <p class="rvps2" style="border: none; padding: 0cm">BYPASSMCI</p>
+        </td>
+        <td width="1254">
+          <p class="rvps2" style="border: none; padding: 0cm">Several games perform MCI operations (e.g. to check for a CD-ROM) that are not essential and may cause errors. This flag bypasses MCI calls when possible and returns a positive result.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="172">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix PCM audio</p>
+        </td>
+        <td width="111">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXAUDIOPCM</p>
+        </td>
+        <td width="1254">
+          <p class="rvps2" style="border: none; padding: 0cm">Support stereo PCM audio by downgrding the audio channels to 1 (mono). Fixes &quot;Capcom Arcade Hits Vol 1&quot; audio problems.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="172">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix Smack/Bink loop</p>
+        </td>
+        <td width="111">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXSMACKLOOP</p>
+        </td>
+        <td width="1254">
+          <p class="rvps2" style="border: none; padding: 0cm">Fixes a Smack/Bink loop by inserting processmessage and blit operations between frames. During the playback of Smack movies (which typically have a .smk extension), the screen may not get updated, which is detected by the OS and killed as a nonresponsive program. The intro movies in the game &quot;Galapagos&quot; benefit from this flag.</p>
+        </td>
+      </tr>
+    </table>
+    <div id="topic_footer" dir="ltr">
+      <p style="margin-bottom: 0.5cm"><br />
+      <br /></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Global settings</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                H3 { color: #000000; text-decoration: none }
+                H3.western { font-style: normal }
+                H3.cjk { font-family: "SimSun"; font-style: normal }
+                H3.ctl { font-family: "Mangal"; font-style: normal }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3.rvps4-western { margin-bottom: 0.11cm; border: none; padding: 0cm; font-style: normal; text-align: left }
+                H3.rvps4-cjk { margin-bottom: 0.11cm; border: none; padding: 0cm; font-family: "SimSun"; font-style: normal; text-align: left }
+                H3.rvps4-ctl { margin-bottom: 0.11cm; border: none; padding: 0cm; font-family: "Mangal"; font-style: normal; text-align: left }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_global_settings1.png" name="grafiikka4" align="bottom" width="494" height="538" border="0" id="grafiikka4" /> <img src="lib/dxwnd_global_settings2.png" name="grafiikka4" align="bottom" width="494" height="538" border="0" id="grafiikka4" /> <img src="lib/dxwnd_global_settings3.png" name="grafiikka4" align="bottom" width="494" height="538" border="0" id="grafiikka4" /></p>
+    <h3 class="rvps4-western">Flags</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">Save paths</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm">Writes the last path used for the game folder and import/export directory to dxwnd.ini. These paths will then serve as default values for these folders. Saving the last used path can be useful, but there are some potential incompatibilities and problems (reported mainly on Windows XP) when a saved folder no longer exists. In this case, you may have to manually delete the saved path from dxwnd.ini, and you may prefer to disable this option.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">Auto hide GUI</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm">Minimizes DxWnd while the hooked program runs, restoring the window when the program ends. This only works for programs started through the DxWnd interface.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">Check for Admin rights</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm">Tells DxWnd to autodetect its own administrator permissions at startup and propose a self-elevation if missing. This option can also be modified with a configuration file (see <a href="Configurationfile.html">Configuration file</a>).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">Name from Folder</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm">When selected Dxwnd creates the default name from the folder instead of the executable.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">Allow multiple hooks</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm">Allow hooking more than one application at a time.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">Warn on exit</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm">Yes/No prompt when closing Dxwnd.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">Debug mode</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm"><a href="Debug.html">Enables debug mode.</a> This option can also be modified with a configuration file (see <a href="Configurationfile.html">Configuration file</a>).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">32 bit icons</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm">Use 32 bit icons instead of the default 16 colors.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">Gray inactive icons</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm">When a path can not be found to an executable gray out the icon.</p>
+        </td>
+      </tr>
+    </table>
+    <p style="margin-bottom: 0.5cm"><br />
+    <br /></p>
+    <hr />
+    <h3 class="rvps4-western">Overlay</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">Position</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm">The combo box defines the position for the DxWnd overlay messages (FPS and time stretching): it can be set in each one of the four window corners, or randomply moving to all corners, or centered in the window.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="155">
+          <p class="rvps2" style="border: none; padding: 0cm">Style</p>
+        </td>
+        <td width="1388">
+          <p class="rvps2" style="border: none; padding: 0cm">Defines the style for the overlay text.</p>
+        </td>
+      </tr>
+    </table>
+    <p style="margin-bottom: 0.5cm"><br />
+    <br /></p>
+    <hr />
+    <h3 class="rvps4-western">Defaults</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">This section allows you to change the default settings for Dxwnd window size and position.</p>
+    <hr />
+    <h3 class="rvps4-western">Function Keys</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">This area allows you to assign common tasks, like turning on logging or taking a screenshot, to the function keys (the row with F1 through F12 at the top of your keyboard). You can map the following functions:</p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Time toggle</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Toggles between normal and accelerated program speed. This allows you to accelerate/decelerate only part of the gameplay (e.g. during a fight) while running at a normal speed otherwise.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Time slow</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Slows down the hooked program. See <a href="TimeSlider.html">Time Slider.</a></p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Clip toggle</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Toggles the clipping region ON and OFF so that you can exit the game area and control other tasks or move/resize your game window.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Log toggle</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Toggles logging ON/OFF. Since painting operations can be quite verbose, toggling the log can be a useful trick to get information about a specific program's activity without having to browse tons of log lines.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">FPS toggle</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Toggle the FPS display ON and OFF.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Corner tog.</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Toggles &quot;cornerized&quot; mode. Cornerized mode is a fake-windowing mode that leaves the screen at the current (usually higher) resolution while the game is not aware of that. The game then runs at the 0,0 coordinate that corresponds to the top-left corner of the screen. It is useful in when the GDI emulation is not perfect, so it's better to have a cornerized mode than a badly emulated rendering. This feature is intended to handle Blizzard's GDI networking screens.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Fullscr. t.</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Toggles between fullscreen mode and windowed mode.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Desktop t.</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Similar to Fullscreen toggle, toggles between fullscreen emulated mode and windowed mode. The difference is that in Desktop mode the video color settings are still emulated, while the color depth remains unchanged.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Time fast</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Speeds up the hooked program. See <a href="TimeSlider.html">Time Slider.</a></p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Alt-F4</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">This key is the well known quit command for any task. If the application doesn't react quickly enough to your command, you can set the &ldquo;Intercept Alt-F4 key&rdquo; option to cause DxWnd to immediately quit the program.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Refresh</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Forces a surface repaint. Some old games didn't even consider the possibility of a task overriding the game area, so they don't repaint when they should. This is a technical detail, but if your game screen gets dirty, try this key to fix it.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Position t.</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Toggles the window position locking (if enabled). This allows you to temporarily unlock the window, move or resize it, and lock it again.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Print screen</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Captures an image of the current screen in the hooked program and saves it to your computer's clipboard.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Time freeze</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">This switches between the normal time mode and a &quot;locked&quot; mode, where the time is not advancing at all. This sometimes produces weird effects, like having all characters in a game stand still while still being able to move the camera.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Work area t.</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Similar to &quot;Desktop toggle,&quot; but the window is stretched to fill only the desktop work area rather than the entire desktop area, leaving the taskbar visible.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">Custom t.</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Sets a custom toggle key. This key has no predefined meaning, it is reserved for debugging purposes only of experimental DxWnd releases and should not be used.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">CD Prev.</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">When multiple CD paths are present, the key rotates the currently active CD volume backwards of one unity, cycling in the avaliable disks. For exmple, if there are 3 CD disks configured in folder cd, cd02 and cd03, if the currently active disk is CD2 then the key activates CD1 and, on the next typings, CD3, CD2, CD1, ... again.</p>Beware: the CD switch can be not immediate, it will be scheduled for next time the application will access a virtual CD disk drive.
+          <p></p>Beware: using the CD prev / next function keys is equivalent to setting the active CD by means of the <a href="CDCharger.html">CD Charger</a> panel, but when the game is configured for proxy mode and run with no DxWnd GUI these keys are the only way to change the mounted CD volume!
+          <p></p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="101">
+          <p class="rvps2" style="border: none; padding: 0cm">CD Next</p>
+        </td>
+        <td width="1442">
+          <p class="rvps2" style="border: none; padding: 0cm">Same as "CD prev", but rotating forward: CD1, CD2, CD3, CD1, ...</p>
+        </td>
+      </tr>
+    </table>
+    <p style="margin-bottom: 0.5cm"><br />
+    <br /></p>
+    <hr />
+    <h3 class="rvps4-western">Hot Keys</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">This area allows you to assign hot keys to minimize the window, restore it, and kill the process. These functions are accessed by holding down Alt, Ctrl, and Shift, and then pressing the chosen function key (F1 through F12).</p>
+    <hr />
+    <h3 class="rvps4-western">Texture limits</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">This area allows you to set minimum and maximum widths and heights for texture processing. The format is as follows:</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Min &lt;minimum width&gt; x &lt;minimum height&gt;</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Max &lt;maximum width&gt; x &lt;maximum height&gt;</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">See <a href="Configurationfile.html">Configuration file &gt; Texture</a>.</p>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p style="margin-bottom: 0.5cm"><br />
+    <br /></p>
+  </div>
+</body>
+</html>

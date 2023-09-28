@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodePageMFCSample", "CodePageMFCSample.vcproj", "{89C7E00E-D02D-4E1F-A41F-1D15341CF539}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Unicode Debug|Win32 = Unicode Debug|Win32
+		Unicode Release|Win32 = Unicode Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89C7E00E-D02D-4E1F-A41F-1D15341CF539}.Debug|Win32.ActiveCfg = Debug|Win32
+		{89C7E00E-D02D-4E1F-A41F-1D15341CF539}.Debug|Win32.Build.0 = Debug|Win32
+		{89C7E00E-D02D-4E1F-A41F-1D15341CF539}.Release|Win32.ActiveCfg = Release|Win32
+		{89C7E00E-D02D-4E1F-A41F-1D15341CF539}.Release|Win32.Build.0 = Release|Win32
+		{89C7E00E-D02D-4E1F-A41F-1D15341CF539}.Unicode Debug|Win32.ActiveCfg = Unicode Debug|Win32
+		{89C7E00E-D02D-4E1F-A41F-1D15341CF539}.Unicode Debug|Win32.Build.0 = Unicode Debug|Win32
+		{89C7E00E-D02D-4E1F-A41F-1D15341CF539}.Unicode Release|Win32.ActiveCfg = Unicode Release|Win32
+		{89C7E00E-D02D-4E1F-A41F-1D15341CF539}.Unicode Release|Win32.Build.0 = Unicode Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

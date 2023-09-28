@@ -1,0 +1,14 @@
+placeholder for alt.dll folder.
+
+Alternate DirectX dlls must be placed here, and common dll that must me in the game path 
+must be copied in the DxWnd folder above.
+
+For instance:
+
+dgVoodoo:
+.
+	winmm.dll
+./alt.dll
+	DDraw.dll
+	D3D8.dll
+	D3D9.dll

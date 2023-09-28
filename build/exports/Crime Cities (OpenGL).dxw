@@ -1,0 +1,46 @@
+[target]
+title0=Crime Cities (OpenGL)
+path0=D:\Games\Crime Cities\Crime Cities\CRIMECITIES.EXE
+startfolder0=
+launchpath0=
+module0=
+opengllib0=
+notes0=Win Insulation flag to avoid EnumWindows API to "damage" desktop\nSet initial resolution field if using resolution lesser that default 800x600 or fullscreen\nmode won't be detected.
+registry0=
+ver0=0
+monitorid0=-1
+filterid0=0
+renderer0=3
+coord0=0
+flag0=673185888
+flagg0=1212284928
+flagh0=20
+flagi0=138412036
+flagj0=4224
+flagk0=65536
+flagl0=8388608
+flagm0=1024
+flagn0=17825796
+flago0=0
+tflag0=0
+dflag0=0
+posx0=50
+posy0=50
+sizx0=800
+sizy0=600
+maxfps0=0
+initts0=0
+winver0=1
+maxres0=-1
+swapeffect0=0
+maxddinterface0=7
+slowratio0=2
+scanline0=0
+initresw0=640
+initresh0=480
+[stamp]
+version=v2.04.40
+time=Fri Aug 11 12:16:20 2017
+
+
+

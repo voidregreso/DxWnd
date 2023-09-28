@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Virtual drives</title>
+  <meta name="GENERATOR" content="Notepad (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                H1 { color: #000000; font-style: normal; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <p></p>
+  <div id="topic_content" dir="ltr">
+    <h3 class="western"><u>Virtual drives</u></h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Preface:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">When first Win32 games appeared, the PC architecture already included a CD drive. Then, a very common game structure was to install the program and a few critical data on HD and leave all music (in mixed-mode CD roms) and other large multimedia data on the CD. This way, checks for the presence of the CD in the drive were a very practical and used DRM technique.</p>Nowadays, though some of these old games could run on modern platforms, either natively or with support of compatibility shims, emulators or tools like DxWnd, they face the problem of the lack of a CD drive: modern computers are more and more powerful, light and thin, so a CD drive is almost always sacrified on any portable pc.
+    <p></p>Another problem of these games is that they often relied on the possibility to access the first (often unique) HD on the root folder C:\ and therefore they didn't consider the possibility of quite longer pathnames of files moved to the user's area of a modern file system. Some games don't work if not installed in a c:\ subfolder, but this possibility is now usually excluded for security reasons.
+    <p></p>Here comes DxWnd with a set of features that will help bypassing these two problems by building virtual (or fake) CD and HD drives.
+    <p></p>It should be remarked that these features work at the window system libraries level (mostly kernel32.dll) and don't deal with more sophisticated copy protection mechanisms that were developed soon after, based on trickier side effects like the detection of CRC errors on disk or even stronger techniques. In these cases, a good CD drive emulator can provide a more precise simulation.
+    <p></p>But neverthless in many cases the fake devices will prove useful to transfer the files from a CD to your HD and build a game setting with all features, no cracked exe and requiring no CD or CD drive to run properly.
+    <p></p>This may also work togerther with DxWnd CD audio tracks emulations to handle CD music in addition to the CD file system.
+    <p></p>
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Tutorial:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">This tutorial will help to build your own game settings.</p>1: the first step is to install the game on HD, possibly chosing the option to install the minimum set of files: since the virtual CD is on HD, there's no practical advantage to place the same files on HD twice. Also, take note of the CD label, it may prove useful later (for instance, "Drift: When Worlds Collide" checks for the CD label equal to "DRIFT").
+    <p></p>2: then, configure DxWnd to run the game the way you prefer, but still having the CD in the drive. You won't need to handle two problems at a time, so be sure that everything works ok before trying to virtualize the CD.
+    <p></p>3: as a third step, create a folder for the virtual CD files (a 'cd' subfolder of the game install directory will be ok in most cases) and copy there the content of the whole CD. Then configure the virtual CD in DxWnd (if you picked the suggestion, the path could be abbreviated as "?\cd\", where '?' stands for the game folder. It is strongly recommended that the virtual drive letter DOES NOT MATCH that of an existing drive, or there could be some confusion.
+    <p></p>4: now remove the physical CD (or stop the CD emulation, in case you mounted a virtual CD) and try running the game. It may work, but it also may not.
+    <p></p>5: Usually CD checks are placed in the program code executed BEFORE the creation of th first window, so in case of failure set an early hook mode (for instance "Inject suspended process"). The game may also check for the CD label, try setting that value in the CD label DxWnd field. Now try again.
+    <p></p>6: some games (for instance "Sentinel Returns") may perform a CD check using MCI calls to query the number and type of CD tracks. In this case it would be necessary to extract the audio tracks and enable CD audio emulation (see the dedicated tutorial).
+    <p></p>7: if the game still doesn't start and asks for the presene of the game CD, set the log options enabling these (and only these!) flags: "Overwrite", "DxWnd hacks", "System libs", "Debug". If you enabled CD audio emulation, also check the logging "Sound" flag. Run the game again and kill it (with DxWnd kill command) at the no-CD dialog box, then read the dxwnd.log file: inside there could be some clue about what's wrong. In any case, post the logfile on the SF portal, gho will be happy to read and try making it work.
+    <p></p>
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>CD charger:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">If the program needs to access files from different CDs you can use the "CD charger" panel to switch the CD inserted in the virtual drive. If the program configuration includes also virtualization of the CD audio, the virtual CD audio tracks will be updated accordingly.</p>The switch will take place every time a new pathname will be referenced, so unlike what would happen with real disks (or even with mounted iso images) there is no risk of I/O errors on files when their CD is swapped out.
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_cdcharger.png" name="grafiikka7" align="bottom" border="0" id="grafiikka7" /></p>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p><br /></p>
+  </div>
+</body>
+</html>

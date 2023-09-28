@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title></title>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="20180206;553742" />
+  <meta name="CHANGED" content="20180206;560450" />
+</head>
+<body lang="en-US" dir="ltr" xml:lang="en-US">
+  <h3 class="western">Installing DxWnd</h3>
+  <p>To install DxWnd, just unpack the compressed winrar archive.</p>
+  <p></p>
+  <p>DxWnd is portable, meaning that it does not write to the registry and can be placed in any folder you like. Since DxWnd sometimes writes to its folder, use a location that you can write to, like the hard drive or a USB flash drive, rather than a CD.</p>
+  <p></p>
+  <p>You can have as many copies of DxWnd as you like, but only one instance of DxWnd can run at a time.</p>
+  <h3 class="western">Using DxWnd</h3>
+  <p>Just double-click on DxWnd.exe to run the graphical interface (a tiny white empty window), then locate the executable for the program you'd like to hook and drag &amp; drop this file into the DxWnd window. A complex dialog will appear, but in many cases the built-in defaults are sufficient.</p>
+  <p>NOTE: It is a good idea to always run Dxwnd with Administrator privileges.</p>
+  <p></p>
+  <p>Alternatively, you can add a program via the menu by choosing File &gt; Add menu command and filling in the program definition form. The only required parameter is the program path (the Path field).</p>
+  <p></p>
+  <p>For every configured program, the DxWnd interface will show a new entry in the list. You can run a configured program by starting it from its normal shortcut or by double-clicking the program entry.</p>
+  <p></p>
+  <p>Be sure to read &quot;README.FIRST.txt&quot; for important information about running Dxwnd. And check &quot;readme-relnotes.txt&quot; to find out what has changed.</p>
+  <p></p>
+  <p>Check out the <a href="./Beginners.html">Beginner's Tutorial</a></p>
+  <p class="rvps2" style="margin-left: 0.5cm"><img src="lib/warn.png" name="warning" align="left" id="warning" /> DxWnd saves all its data in a configuration file names dxwnd.ini. It may happen that you accidentally chosed to install DxWnd in a folder where the program doesn't have write capabilities, and this would prevent it to save the configuration. To avoid this risk, DxWnd performs an initial check about the save operation and, in case of error and before it's too late, it warns you with the following message. If you see the message you will have either to make sure that DxWnd has sufficient capabilities to write in the current folder or to install the program in another folder until the message is no longer visible. For instance, it may happen that DxWnd folder can't be appended below the desktop but should be moved to the "Programs" or "Documents" folder.</p>
+  <p class="rvps2" style="bottom: 0.5cm"><img src="lib/no_write_capability.png" name="no write capability" align="bottom" /></p>
+  <h3 class="western">Troubleshooting</h3>
+  <p>Many games require additional configuration before they run correctly. For this reason, the program comes with an export folder that contains predefined, tested configurations for all tested games. If you're having trouble running a game, check this set of files to see if you can import a built-in configuration file (with File &gt; Import). Remember to update the Path field to match the hooked program's location on your computer.</p>
+  <p></p>
+  <p>If you still can't get it to work, there are a few more options to try:</p>
+  <ul>
+    <li>
+      <p style="margin-bottom: 0cm">Run the game with the &quot;show hints&quot; flag. DxWnd will try to analyze the program at runtime and provide some hints about possible configuration improvements by showing messages in dialog boxes. Remember to turn this flag off once everything is working, or you will continue to receive these messages.</p>
+    </li>
+    <li>
+      <p style="margin-bottom: 0cm">Check the common problems list (coming soon) for solutions to known issues.</p>
+    </li>
+    <li>
+      <p>Collect some logs by setting the log flags (see <a href="./Logs.html">Logs</a>) and sending the logs to the developer via a new thread on the <a href="https://sourceforge.net/p/dxwnd/discussion/general/" target="_blank">SourceForge discussion board</a>. Remember to specify your platform and the version of the game, and include a description of the problem.</p>
+    </li>
+  </ul>
+  <p style="margin-bottom: 0cm"><br /></p>
+</body>
+</html>

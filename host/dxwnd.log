@@ -1,0 +1,9 @@
+Init ClearType=1
+Init FontSmoothing=1
+Init FontSmoothingContrast=1200
+Init FontSmoothingOrientation=1
+Init FontSmoothingType=2
+Init StickyKeys=1fa
+Init ToggleKeys=3a
+Init FilterKeys=7a:0:1000:500:1000
+joystick initial deadzone = 5%

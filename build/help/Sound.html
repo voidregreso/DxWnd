@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Sound</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3 { color: #000000 }
+                H3.cjk { font-family: "SimSun" }
+                H3.ctl { font-family: "Mangal" }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_sound.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <h3 class="western">Generic</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Lock Volume</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">LOCKVOLUME</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Prevents volume changes requested by the application. This holds for DirectSound SFX effects and, since v2.04.59, also for multimedia audio track volume changes requested through libmm library.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Set emulated CD volume</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm"></p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">When enabled allows the adjustment of the emulated CD music volume using the slider. This is useful for games that have broken in game volume controls that do not allow a proper music vs. sound effect balance.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">DirectSound</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook DirectSound</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">HOOKDIRECTSOUND</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Hooks DirectSound to avoid hardware exclusive access, allowing debugging, tracing, and future expansions.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Mute</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">SOUNDMUTE</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Option against buffers starting automatically without Play method - fixes mute option with &quot;Digging Jim&quot;.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Initialize volume</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">DSINITVOLUME</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Initializes the sound volume for the application's mixer channel. Fixes old games starting with zero volume as in "O.D.T. Escape ... or Die Trying" movies. The volume is initialized to the value defined with the emulated CD volume slider.</p>
+        </td>
+      </tr>
+    </table>
+    <p><b>Global focus</b></p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Default:</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">no intervention</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">ON</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Forces sound buffers with GLOBALFOCUS capability to allow sound play also when focus is lost.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">OFF</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Forces sound buffers without GLOBALFOCUS capability to stop sound play when focus is lost.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">MultiMedia</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Lock CD tray</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">LOCKCDTRAY</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Attempt to bypass all operations that may open / clode the physical CD tray.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix default MCI Id</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXDEFAULTMCIID</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">When opening or querying a MCI midi or wave device you can use the default Id. -1.On Win95/98/ME this field was a 16 bit WORD value equal to 0xFFFF, but since WinXP it became a 32 bit DWORD value equal to 0xFFFFFFFF so that the legacy 0xFFFF was no longer valid. The flag converts the legacy (WORD)-1 value to a valid (DWORD)-1 value.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">SafeMidi</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">SAFEMIDIOUT</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Some programs try do make fading midi sounds by quickly changing the midi sound volume programmatically. This operation, perhaps depending on the midi sound drivers, can be harmful and lead to the program crash. This flag disables some potentially harmful midi operations like the volume change and the sequence reset as a reasonable compromise between sound quality and robustness.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Hook ear sound dll</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">HOOKEARSOUND</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">For diagnostic purposes only, it hooks aer sound dlls to enable operation tracing.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">CD audio emulation</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Virtual CD audio</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">VIRTUALCDAUDIO</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Flag for CD audio emulation. First make sure you have a folder named &quot;Music&quot; in your game folder with the music in .ogg format starting from track02.ogg. For a detailed tutorial, see <a href="VirtualCDA.html">Tutorials &gt; Virtual CD Audio</a>.</p>
+          <p>Since v2.04.98 the Virtual CD was modified accepting more audio file formats and introducing a playlist caching to speed up operations.</p>
+          <p>New supported formats are .flac (lossyless compressed audio), ,mp3 (lossy compressed audio) and .wav (uncompressed audio), though not all formats may react in the same way to all mci commands.</p>
+          <p>The playlist caching creates in the Music folder a file named tracklen.nfo that holds all relevant information to quickly access the tracks. Beware: whenever the content of the Music folder changes (whether to add / remove a track, change its format or duration) this file should be manually deleted in order to tell the emulator to build an up-to-date new version.</p>
+          <p>The Music folder can host also a special file mcihack.txt that allows the definition of special behaviors of the mci calls accessing the virtual CD. See the section below</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Force track repeat</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">FORCETRACKREPEAT</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">For use when we want a repeated track that is not in the original behaviour.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Ignore Device Id.</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">IGNOREMCIDEVID</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">The audio cd player emulation needs to know whether a given id belongs to video devices (e.g. when playing a movie) or an audio device (the cd rom reader to play a soundtrack). To avoid ambiguity, the fake audio devices are opened returning a fake device id 0xBEEF that will never overlap a valid real device id. But in some cases the device is opened before the hook take place, so the audio device could get a real device id (like 0, 1 or such) unless you set strong hook modes (inject suspended process or debug mode). But if such an ambiguity does not exist, the IGNOREMCIDEVID flag tells the audio emulator to handle any device id, no matter if it is real or a fake 0xBEEF. This allows to make audio emulation working also with default hooking and in case the device is opened before the hook.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Force CDROM present</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">CDROMPRESENT</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">pretend there is a CDROM disk ready to be played in each queried device.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Hack track frames</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">HACKMCIFRAMES</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Some games (so far, "Absolute Terror", full CD release) could use a fake CD track frame counter as a copy protection mechanism. The flag causes the CD emulation to return an hacked frame counter value fer each track as stored in the mcihack.txt file located i the Music folder.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Emulate CD pause capability</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">CDPAUSECAPABILITY</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">According to MSDN documentation, a CD drive may or may not have the capability to pause the music play. Depending on that, when a "pause" command is sent, the returned drive status could be either "pause" or "stop". Since the majority of drives doesn't have this capability, it is possible that a program may simply expect the "stop" answer. This is what happens with "Speedboat Attack" that, after a pause command sent entering the ESC key during a boat race, it resumes the music play only if the status is equal to "stop" and not "paused". For these reasons the flag is defaulted to off.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppress CD audio</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">SUPPRESSCDAUDIO</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">Experimental flag, pretends that the system has no CD audio device also if that device is present. In order to have effect, the flag must be set together with VIRTUALCDAUDIO.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="189">
+          <p class="rvps2" style="border: none; padding: 0cm">Reserve MCI id</p>
+        </td>
+        <td width="137">
+          <p class="rvps2" style="border: none; padding: 0cm">RESERVEMCIDEVICE</p>
+        </td>
+        <td width="1171">
+          <p class="rvps2" style="border: none; padding: 0cm">This flag is a little tricky. DxWnd CD audio emulation assigns a fake MCI device id to the audio session, taking care that the id is not used by other devices. But since the audio CD device is not really opened, there is the possibility that the same id could be assigned to another MCI session, for instance to a midi mapper device.</p>
+          <p>This could cause confusion when the program tries to address a specific device with a non-unique id, and is a problem when the program tries to close all opened devices. It should be remarked that a failure to orderly close all MCI devices may saturate the system capacity to open new devices until the next system reboot.</p>
+          <p>The flag cancels this risk by opening a real MCI device when opening the fake CD session, so that the id would be reserved and not overlapped by following operations. In order to do that with minimal impact with the program, DxWnd opens an audio device for a wav file, namely the dxwnd.wav file that now (since v2.05.51 on) must be located in the DxWnd folder. It should be noted that the wav file will be used only to open a MCI device, but it will never be played.</p>
+        </td>
+      </tr>
+    </table>
+    <h3 class="western">mcihack.txt</h3>
+    <p class="rvps2" style="border: none; padding: 0cm">the file mcihack.txt allows the definition of special behaviors of the mci calls accessing the virtual CD.</p>It is a standard Windows .ini file composed by different sections:
+    <p></p>[info]
+    <p></p>identity=<i>value</i> : defines the CD identity (ref. mciSendString("info cdaudio identity"))
+    <p></p>product=<i>value</i> : defines the CD product code (ref. mciSendString("info cdaudio upc"))
+    <p></p>[frames]
+    <p></p>track<i>nn</i>=<i>value</i> : forces the track length of track<i>nn</i> when requested in frames
+    <p></p>[msec]
+    <p></p>track<i>nn</i>=<i>value</i> : forces the track length of track<i>nn</i> when requested in milliseconds
+    <p></p>[tmsf]
+    <p></p>track<i>nn</i>=<i>value</i> : forces the track length of track<i>nn</i> when requested in tmsf format
+    <p></p>
+    <div id="topic_footer" dir="ltr">
+      <p style="margin-bottom: 0.5cm"><br />
+      <br /></p>
+    </div>
+  </div>
+</body>
+</html>

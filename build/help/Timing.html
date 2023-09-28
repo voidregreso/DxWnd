@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Timing</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3 { color: #000000 }
+                H3.cjk { font-family: "SimSun" }
+                H3.ctl { font-family: "Mangal" }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_timing2.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <h3 class="western">Frame per Second</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="124">
+          <p class="rvps2" style="border: none; padding: 0cm">Limit</p>
+        </td>
+        <td width="119">
+          <p class="rvps2" style="border: none; padding: 0cm">LIMITFPS</p>
+        </td>
+        <td width="1294">
+          <p class="rvps2" style="border: none; padding: 0cm">Introduces a configurable delay between &nbsp;screen refresh operations, so that the FPS is limited accordingly.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="124">
+          <p class="rvps2" style="border: none; padding: 0cm">Skip</p>
+        </td>
+        <td width="119">
+          <p class="rvps2" style="border: none; padding: 0cm">SKIPFPS</p>
+        </td>
+        <td width="1294">
+          <p class="rvps2" style="border: none; padding: 0cm">Introduces no delay in the screen operations, but skips several screen updates so that the actual FPS value is &nbsp;limited without the program noticing it.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="124">
+          <p class="rvps2" style="border: none; padding: 0cm">delay (msec)</p>
+        </td>
+        <td width="119"></td>
+        <td width="1294">
+          <p class="rvps2" style="border: none; padding: 0cm">Sets the delay time, expressed in milliseconds, for both the &quot;Limit&quot; (LIMITFPS) and &quot;Skip&quot; (SKIPFPS) options. To be noted that the FPS is related to the delay by the formula FPS = 1000/Delay or, the other way around, Delay = 1000/FPS. So if, for example, you desire an FPS not greater than 50, the corresponding value to get this effect is Delay = 20msec. Note that a greater delay means a slower frame rate.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="124">
+          <p class="rvps2" style="border: none; padding: 0cm">Limit Flip only</p>
+        </td>
+        <td width="119">
+          <p class="rvps2" style="border: none; padding: 0cm">LIMITFLIPONLY</p>
+        </td>
+        <td width="1294">
+          <p class="rvps2" style="border: none; padding: 0cm">When set, both the FPS limitation and FPS count take in consideration only the Flip operations, ignoring any other operation like Blt to primary surface.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="124">
+          <p class="rvps2" style="border: none; padding: 0cm">Limit D3D BeginScene</p>
+        </td>
+        <td width="119">
+          <p class="rvps2" style="border: none; padding: 0cm">LIMITBEGINSCENE</p>
+        </td>
+        <td width="1294">
+          <p class="rvps2" style="border: none; padding: 0cm">Flag to limit FPS in D3D games. Note: If used together with the &quot;limit&quot; flag you will get a doubled delay.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="124">
+          <p class="rvps2" style="border: none; padding: 0cm">Limit DIB operations</p>
+        </td>
+        <td width="119">
+          <p class="rvps2" style="border: none; padding: 0cm">LIMITDIBOPERATIONS</p>
+        </td>
+        <td width="1294">
+          <p class="rvps2" style="border: none; padding: 0cm">Flag to apply delay to GDI32 DIB operations only. Helps improving "Rubik's Games" animations.</p>
+        </td>
+      </tr>
+    </table>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Limiting the FPS may also help old games that suffer from strange side effects from running too fast. For example: Mechwarrior 3 jumping APC bug can be fixed by limiting the FPS to 30 or below. Another game that benefits from FPS limit is the 1999 release of Outcast (Twon-ha riding bug). Yet another is BladeRunner (shooting range bug).</p>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">System speed</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="112">
+          <p class="rvps2" style="border: none; padding: 0cm">CPU slow down</p>
+        </td>
+        <td width="99">
+          <p class="rvps2" style="border: none; padding: 0cm">CPUSLOWDOWN</p>
+        </td>
+        <td width="1326">
+          <p class="rvps2" style="border: none; padding: 0cm">Reduces a program's CPU usage by suspending and resuming all of its threads according to the specified ratio. Since the minimum timing resolution that the system can use for this operation is 1ms, (1/1000th of a second), high ratios may make the game appear choppy. This flag doesn't suspend high-priority threads.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="112">
+          <p class="rvps2" style="border: none; padding: 0cm">CPU max usage</p>
+        </td>
+        <td width="99">
+          <p class="rvps2" style="border: none; padding: 0cm">CPUMAXUSAGE</p>
+        </td>
+        <td width="1326">
+          <p class="rvps2" style="border: none; padding: 0cm">Same as CPUSLOWDOWN, but operates more selectively. This flag only suspends process threads that are consuming more CPU than the selected ratio. This option can't be set at the same time as CPUSLOWDOWN.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="112">
+          <p class="rvps2" style="border: none; padding: 0cm">Ratio</p>
+        </td>
+        <td width="99"></td>
+        <td width="1326">
+          <p class="rvps2" style="border: none; padding: 0cm">Allows you to set a ratio for the slowdown used by the above flags. For example, a value of 2 will produce a ratio of 1:2, suspending the program for 1ms and then running it for 2ms, reducing that program's CPU usage by 33%.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="112">
+          <p class="rvps2" style="border: none; padding: 0cm">Use precise timing</p>
+        </td>
+        <td width="99">
+          <p class="rvps2" style="border: none; padding: 0cm">PRECISETIMING</p>
+        </td>
+        <td width="1326">
+          <p class="rvps2" style="border: none; padding: 0cm">Use precise timing through the QueryPerformanceCounter system call. Produces a smoother slow down.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Time Stretching</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Time Stretching &ndash; initial</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">TIMESTRETCH</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">If this option is checked, DxWnd tries to emulate an accelerated (xn) or decelerated (:n) time flow. The value set in the listbox is the initial value, that can be altered by means of the time control slider in the time panel (see <a href="TimeSlider.html">Time Slider</a>). When checked, DxWnd stretches time in the timing API (such as with GetSystemTime()), the query performance APIs, and the Sleep APIs, which are the most common ways to control a program's timing.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Show time stretch</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">SHOWTIMESTRETCH</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">When checked, the time stretch ratio is drawn as an overlay in a corner of the screen, sometimes moving to other corners when it is updated.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Fine time adjust</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">FINETIMING</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">When checked, the time stretch ratio shows ticks in finer increments, switching from a 50% change with each tick to a 10% change with each tick. This limits the range to 0.5x-2.0x but allows for finer timing control.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Enable Time Freeze</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">ENABLETIMEFREEZE</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">See <a href="GlobalSettings.html">Function Keys</a>.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Intercept RDTSC opcode</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">INTERCEPTRDTSC</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">Program timing is usually determined by system calls that can be easily and safely hooked to stretch the flow of time. There is one possible exception, however: when the program embeds in its assembly the RDTSC assembly instruction opcodes that directly access the hardware clock. This timing value can still be intercepted and manipulated, but using a more delicate technique that searches for the assembly code and replaces it with specific calls. This is why I preferred to make this option available with a dedicated flag to be activated when necessary. The flag should be set whenever adjusting the time stretching option does not alter the time flow.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Stretch Performance Frequency</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">STRETCHPERFREQUENCY</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">Despite the fact that Microsoft documents clearly state that the QueryPerformanceFrequency returns a constant value that could be cached on a given machine, some games (es. "Gun Wings") do not rely on the system clock and repeatedly use QueryPerformanceFrequency. The flag alters the returned value scaling it by the time stretching factor.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Stretch timers</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">STRETCHTIMERS</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">When checked, the window timers are stretched, namely the user32.dll timers set by SetTimer and the multimedia timers in winmm.dll set by timeSetEvent().</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Normalize Performance Counter</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">NORMALIZEPERFCOUNT</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">Normalizes the system performance counter, simulating a clock speed of 1MHz. Some old games assume that this is the correct clock speed, and produce speed problems without this flag. This flag gives these old games the clock speed they depend on to run properly. Don't use this flag unless you are experiencing speed issues.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Suspend time stretch in movies</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">SUSPENDTIMESTRETCH</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">Suspend time stretch flag to play movies at normal speed and avoid audio shuttering (implemented for bink and smack videos only so far).</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">CPU Optimization</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Slow down mouse polling</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">SLOW</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">Some old programs have this bad habit of continuously looping through the mouse status polling with no delay, hogging 100% of CPU resources. This flag introduces a minimal and unnoticeable delay between mouse polls, saving CPU resources.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Slow down window polling</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">SLOWWINPOLLING</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">Reduces CPU load in some programs.</p>
+        </td>
+      </tr>
+    </table>
+    <hr />
+    <h3 class="western">VSync Tweaks</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="188">
+          <p class="rvps2" style="border: none; padding: 0cm">Kill D3D vSync</p>
+        </td>
+        <td width="148">
+          <p class="rvps2" style="border: none; padding: 0cm">KILLVSYNC</p>
+        </td>
+        <td width="1201">
+          <p class="rvps2" style="border: none; padding: 0cm">Fast-pacing games may rely on the video vertical synchronization to control the game speed, making it easy to delay the frame rate, but making it hard to speed it up. The flag forces no vertical synchronization in D3D operations so that the FPS value could grow indefinitely.<br />
+          Beware: this tweak is supported from D3D9 and higher, D3D8 does not support this method.</p>
+        </td>
+      </tr>
+    </table>
+    <div id="topic_footer" dir="ltr">
+      <p style="margin-bottom: 0.5cm"><br />
+      <br /></p>
+    </div>
+  </div>
+</body>
+</html>

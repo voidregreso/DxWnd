@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>The Interface</title>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm">DxWnd comes with a simple graphical interface. The initial view is shown below:</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="./lib/dxwnd_main_screen2.png" name="grafiikka3" align="bottom" width="320" height="200" border="0" id="grafiikka3" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">NOTE: When Dxwnd starts you may not see all the options that are covered in this manual. This is because by default Dxwnd does not have &quot;Expert mode&quot; enabled (Options&gt;Expert mode).</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">The main window shows the list of hooked programs. DxWnd can currently handle up to 256. Trying to add more than that will produce an error message. Keep in mind that DxWnd bundles contain an export subfolder where all supported games have their own default configuration ready to be imported, but, because of the program's absolute path value, these entries will actually work only after updating the path with the proper local value.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">By default Dxwnd now shows the actual program icons instead of the indicator icons of previous releases. Active program has a 32bit or 16 color icon (32bit icons can be selected from the global settings). If the exe path is not valid the icon will be grayed out as shown in the picture.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">If you select the detailed view (list&gt;detail) each configuration line includes an icon with the program's status, color-coded as follows:</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="./lib/dxwnd_main_screen1.png" name="grafiikka4" align="bottom" width="320" height="200" border="0" id="grafiikka4" /></p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="146">
+          <p class="rvps2" style="border: none; padding: 0cm"><img src="./lib/white.png" name="grafiikka5" align="bottom" width="84" height="18" border="0" id="grafiikka5" /></p>
+        </td>
+        <td width="1397">
+          <p class="rvps2" style="border: none; padding: 0cm">blank icon: the program's given path cannot be found and the entry won't work until the path is corrected.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="146">
+          <p class="rvps2" style="border: none; padding: 0cm"><img src="./lib/gray.png" name="grafiikka6" align="bottom" width="84" height="18" border="0" id="grafiikka6" /></p>
+        </td>
+        <td width="1397">
+          <p class="rvps2" style="border: none; padding: 0cm">gray icon: the hook is not enabled: this program can be activated by the DxWnd menu, but won't be windowed.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="146">
+          <p class="rvps2" style="border: none; padding: 0cm"><img src="./lib/green.png" name="grafiikka7" align="bottom" width="84" height="18" border="0" id="grafiikka7" /></p>
+        </td>
+        <td width="1397">
+          <p class="rvps2" style="border: none; padding: 0cm">green icon: the hook is enabled and the program will be windowed when run from the DxWnd interface or from its normal executable or shortcut.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="146">
+          <p class="rvps2" style="border: none; padding: 0cm"><img src="./lib/yellow.png" name="grafiikka8" align="bottom" width="84" height="18" border="0" id="grafiikka8" /></p>
+        </td>
+        <td width="1397">
+          <p class="rvps2" style="border: none; padding: 0cm">yellow icon: the program requires code injection, so it will need to be activated from the DxWnd interface only.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="146">
+          <p class="rvps2" style="border: none; padding: 0cm"><img src="./lib/red-white-bar.png" name="grafiikka9" align="bottom" width="84" height="18" border="0" id="grafiikka9" /></p>
+        </td>
+        <td width="1397">
+          <p class="rvps2" style="border: none; padding: 0cm">red-white bar icon: Entries that must be configured but should NOT be run by the user interface, typically son processes run by hooked frontends.</p>
+        </td>
+      </tr>
+    </table>
+    <p class="rvps2" style="margin-bottom: 0.5cm">You can activate commands via the top menu or by right-clicking on a row in the application list.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">DxWnd is also able to operate iconized in the System Tray, where it shows its state (either IDLE, READY or RUNNING) and runs a few useful commands.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">DxWnd detects video settings when it is started, and compares them to the current value after killing a task or terminating itself. If it finds differences, it asks whether you want to restore the previous screen setting. This is quite useful to handle all the games that terminate without restoring the previous setting, as may happen when they die abnormally.</p>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p style="margin-bottom: 0.5cm"><br />
+    <br /></p>
+  </div>
+</body>
+</html>

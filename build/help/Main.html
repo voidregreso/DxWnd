@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Main</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3 { color: #000000 }
+                H3.cjk { font-family: "SimSun" }
+                H3.ctl { font-family: "Mangal" }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_main6.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Check out the <a href="Beginners.html">Beginner's Tutorial</a></p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="58">
+          <p class="rvps2" style="border: none; padding: 0cm">Name</p>
+        </td>
+        <td width="1485">
+          <p class="rvps2" style="border: none; padding: 0cm">Allows you to choose a descriptive name for this entry. For example, if DxWnd is hooking two releases of a program, you can mention each entry's version number in the name. If you don't set a name, DxWnd sets the field by default with the task's filename or, if you selected the "Name from folder" global option, with the task folder name.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="58">
+          <p class="rvps2" style="border: none; padding: 0cm">Path</p>
+        </td>
+        <td width="1485">
+          <p class="rvps2" style="border: none; padding: 0cm">The executable pathname of the task to be activated/hooked.</p>The field should hold the full pathname of the task that DxWnd will search in the list of active processes and hook when it finds the corrispondence. There are special cases depending on the first pathname character:
+          <p></p>If the pathname first character is an asterisk <b>'*'</b> this will work as a wildcard for anything that precedes the remaining part of the path. This can be used to hook a well identified program no matter where it is located on the system folders. But this feature should not e abused because DxWnd will hook any process with a matching path, and if this is generic enough DxWnd could hook processes that were not meant to! In addition, the wildcard won't allow DxWnd to run the process directly from its interface.
+          <p></p>If the pathname first character is a question mark <b>'?'</b> this means that the initial part of the pathname is unspecified and DxWnd will ask yo to complete the field before running the program. This allows to distribute export files that do not contain specific full pathnames that match only the originator's machine and automatically remind whoever imports them to complete the field before trying to use this imported configuration.
+          <p></p><img src="lib/incomplete.png" name="incomplete path" border="0" />
+          <p></p><b>NOTE: Only 32-bit executables are currently supported.</b>
+          <p></p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="58">
+          <p class="rvps2" style="border: none; padding: 0cm">Launch</p>
+        </td>
+        <td width="1485">
+          <p class="rvps2" style="border: none; padding: 0cm">In some cases, the program to be hooked can't be run by launching itself directly, but needs arguments or other environment elements provided by some frontend parent program. To simplify the program's activation, enter the frontend's pathname here. When set, the Run command runs the chosen frontend launcher rather than the path in the Path field above.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="58">
+          <p class="rvps2" style="border: none; padding: 0cm">Folder</p>
+        </td>
+        <td width="1485">
+          <p class="rvps2" style="border: none; padding: 0cm">When you run a program through the DxWnd interface, the program execution path is not set by default. The program location folder is used as the execution folder. This works for most programs, but some need to start from a different path. Enter a path in this text box to specify a different execution path parameter.</p>
+        </td>
+      </tr>
+    </table>
+    <p style="margin-bottom: 0.5cm"><br />
+    <br /></p>
+    <hr />
+    <h3 class="western">Generic</h3>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Do not notify on task switch</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">UNNOTIFY</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Inhibits the task switch notification message that may hurt some games not designed to handle it properly. For example if the game window disappears when you click outside of it try enabling this flag.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">No banner</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">NOBANNER</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Well, DxWnd celebrates itself a little by showing a very short splash screen at the beginning. If you're not happy with this, checking this flag will disable the show.</p>
+          <p>The banner is enabled by default because it helps finding out whether and when the hook takes place and detects the beginning of a fullscreen condition, so it helps finding the correct DxWnd configuration for a new game.</p>
+          <p>The banner includes a short animation with light effects, but if you prefer a shorter and simpler animation you only have to delete the dxwanim.bmp file from the DxWnd folder.</p>
+          <p>In case the configuration includes some (probably forgotten) debug flag, then the banner changes its picture to remind you. See below the normal banner (left) and the banner when debug flags are set (right).</p><img src="lib/dxwbanner.jpg" name="dxwbanner" align="bottom" border="0" id="dxwbanner" /> <img src="lib/dxwdebug.jpg" name="dxwdebug" align="bottom" border="0" id="dxwdebug" />
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Run in window</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">WINDOWIZE</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Checked by default, tells DxWnd to try to run the program in windowed mode, as that is the essential reason why DxWnd exists. If not checked, DxWnd still performs all other functions not related to the screen size, such as time stretching, compatibility options, and so forth.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Terminate on window close</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">TERMINATEONCLOSE</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Immediately terminates the application when you close the window.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Acquire admin caps</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">NEEDADMINCAPS</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Hooking the game requires running DxWnd as an administrator. If you set this flag and run DxWnd without administrator privileges, running a game from the DxWnd interface will show a dialog box prompting you to elevate the permissions level. When you confirm this, DxWnd will automatically terminate and restart itself. If you don't see its window anymore, look beneath other windows, as it may lose its Z-order when it restarts.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Fullscreen only</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">FULLSCREENONLY</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Forces applications to be considered always in fullscreen mode, helping DxWnd to set them in window mode when the fullscreen condition is not automatically detected.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Lower background priority</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">BACKGROUNDPRIORITY</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">A simple change of priority class when the game gets/loses focus. This is meaningful only for old games that were NOT developed to suspend themselves whenever going idle.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Ask confirmation on window close</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">CONFIRMONCLOSE</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Asks you for confirmation when you close the window.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="204">
+          <p class="rvps2" style="border: none; padding: 0cm">Use short path</p>
+        </td>
+        <td width="133">
+          <p class="rvps2" style="border: none; padding: 0cm">USESHORTPATH</p>
+        </td>
+        <td width="1160">
+          <p class="rvps2" style="border: none; padding: 0cm">Legacy flag for use only in WinXP to support Win9x compatibility layer. Beware: this option is visible and available on WinXP platform only since it is useless on more recent systems.</p>
+        </td>
+      </tr>
+    </table>
+    <p style="margin-bottom: 0.5cm"><br />
+    <br /></p>
+    <hr />
+    <h3 class="western">Position</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Example: 1. Desktop center, 2. Desktop work area, 3. Desktop work area + Keep aspect ratio, 4. Desktop work area + Keep aspect ratio + Hide desktop background</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_position.jpg" name="grafiikka5" align="bottom" width="810" height="460" border="0" id="grafiikka5" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">The following flags have an effect only when the &quot;run in window&quot; option is selected (with the WINDOWIZE flag).</p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="194">
+          <p class="rvps2" style="border: none; padding: 0cm">Hide desktop background</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">HIDEDESKTOP</p>
+        </td>
+        <td width="1213">
+          <p class="rvps2" style="border: none; padding: 0cm">Starts the windowized program together with four black borderless windows that surround it entirely, eliminating distracting background windows and providing a more focused gaming experience. The whole idea was borrowed from &quot;<a href="https://sourceforge.net/projects/mrhyde/" target="_blank">Mr. Hide</a>.&quot;</p><b>Note:</b> in some cases the black window used as a background panel can interfere with the target program. In this case it is possible to run an external and independent tool to perform the same task by using the DxWnd menu command <i>Tool -&gt; Run "blacker"</i>.
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="194">
+          <p class="rvps2" style="border: none; padding: 0cm">Keep aspect ratio</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">KEEPASPECTRATIO</p>
+        </td>
+        <td width="1213">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">When the window is resized, the aspect ratio set by the window initial size is preserved (by default the 4:3 aspect ratio such as 800x600).</p>
+          <p class="rvps2" style="border: none; padding: 0cm">Selecting a fake fullscreen mode calculates the aspect ratio according to the window's initial aspect ratio. This way, you can have fake fullscreen modes with ratios other than 4:3 - for example, set a width of 16 and a height of 9 to fill a 16:9 widescreen monitor.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="194">
+          <p class="rvps2" style="border: none; padding: 0cm">Adaptive ratio</p>
+        </td>
+        <td width="130">
+          <p class="rvps2" style="border: none; padding: 0cm">ADAPTIVERATIO</p>
+        </td>
+        <td width="1213">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">The rendered area dynamically assumes the same aspect ratio as the virtual desktop resolution.</p>
+          <p>This is useful when DxWnd is configured for fake-fullscreen modes and a program uses different resolutions that don't have all the same aspect ratio (es. Cossacks II).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="194">
+          <p class="rvps2" style="border: none; padding: 0cm">Window initial position &amp; size</p>
+        </td>
+        <td width="130"></td>
+        <td width="1213">
+          <p class="rvps2" style="border: none; padding: 0cm">Four values for the initial X, Y coordinates of the upperleft window corner and the window width (W) and height (H). All values are referred to the window client area rather than the outside border. The values are used depending on the Position selection: for &quot;X, Y&quot; coordinates they are all used, for &quot;Desktop center&quot; DxWnd automatically centers the position and uses only the height and width, and in the remaining fake-fullscreen modes the height and width are used only as a reference for the desired aspect ratio when &quot;Keep aspect ratio&quot; (the KEEPASPECTRATIO flag) is set (if it has not been set, the height and width are ignored).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="194">
+          <p class="rvps2" style="border: none; padding: 0cm">Monitor</p>
+        </td>
+        <td width="130"></td>
+        <td width="1213">
+          <p class="rvps2" style="border: none; padding: 0cm">For almost all window position modes (except the &quot;X,Y coordinates&quot; mode), multi-screen configurations require you to specify which monitor the configuration refers to. For instance, if you select &quot;centered,&quot; you probably want it centered on a specific monitor rather than in the entire extended desktop. The drop-down selector has a &quot;def.&quot; (&quot;default&quot;) option, referring to the primary monitor, and a number for each specific monitor.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="194">
+          <p class="rvps2" style="border: none; padding: 0cm">Coordinate picker</p>
+        </td>
+        <td width="130"></td>
+        <td width="1213">
+          <p class="rvps2" style="border: none; padding: 0cm">This icon activates a mechanism to pick the new program placement coordinates (see &quot;Window initial position &amp; size&quot; above) using an existing window on the desktop. Click and drag from the icon to the desired window to automatically fill in the &quot;Window initial position &amp; size&quot; fields with these window coordinates. Release the mouse button while over the title bar or an empty area in the desired window, as releasing the mouse button over a widget (like a text field, button, or other object) will select coordinates for that widget rather than the entire window.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="194">
+          <p class="rvps2" style="border: none; padding: 0cm">Position</p>
+        </td>
+        <td width="130"></td>
+        <td width="1213">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">A selection of 4 possible cases:</p>
+          <ul>
+            <ul>
+              <li>
+                <p style="margin-bottom: 0.5cm; border: none; padding: 0cm">X, Y coordinates: the window is placed at the chosen coordinates</p>
+              </li>
+              <li>
+                <p style="margin-bottom: 0.5cm; border: none; padding: 0cm">Desktop center: the window is centered on the screen, and only the width and height fields are used.</p>
+              </li>
+              <li>
+                <p style="margin-bottom: 0.5cm; border: none; padding: 0cm">Desktop work area: the window occupies the whole screen but the bottom taskbar.</p>
+              </li>
+              <li>
+                <p style="margin-bottom: 0.5cm; border: none; padding: 0cm">Desktop: the window occupies the whole screen, as if it was fullscreen (a.k.a. Fake-fullscreen mode)</p>
+              </li>
+            </ul>
+          </ul>
+          <p class="rvps2" style="border: none; padding: 0cm">Note that the first two modes are windowed modes, while the last two modes can be considered fake fullscreen modes. This is because the behavior of the KEEPASPECTRATIO flag changes along with this classification.</p>
+        </td>
+      </tr>
+    </table>
+    <div id="topic_footer" dir="ltr">
+      <p style="margin-bottom: 0.5cm"><br />
+      <br /></p>
+    </div>
+  </div>
+</body>
+</html>

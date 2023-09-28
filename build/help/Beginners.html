@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>Beginner's</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                H1 { color: #000000; font-style: normal; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <p></p>
+  <div id="topic_content" dir="ltr">
+    <h3 class="western"><u>Beginners Tutorial</u></h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Adding a game into Dxwnd:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">When you first start Dxwnd you should see the following screen:</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_beginners1.png" name="grafiikka4" align="bottom" width="320" height="213" border="0" id="grafiikka4" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Now lets start by adding a path from your games executable to Dxwnd.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">1. Click on EDIT-&gt;ADD and the following screen should appear:</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">(Or alternatively you can simply drag &amp; drop the games executable file into the DxWnd main window.)</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_beginners2.png" name="grafiikka5" align="bottom" width="503" height="515" border="0" id="grafiikka5" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">2. Now click on the &quot;...&quot; button on the Path: field and navigate to your games installation directory.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">3. Navigate to your game executable (for example D:\VRally3\Vrally3.exe).</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">4. The game executable is now selected and if you click OK a new entry will appear in the Dxwnd main window for your game.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_beginners3.png" name="grafiikka6" align="bottom" width="320" height="200" border="0" id="grafiikka6" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">This is all that is needed to hook your game to Dxwnd using the default options. If you then double click on the created entry the game should start in the default 800x600 window. However you will probably want to customize your game window size and tweak some other options which we will cover later in this tutorial.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">TIP: Once the game is configured in Dxwnd you can also start the game from its normal shortcut (provided Dxwnd is running in the background). This is especially useful when running Steam games that need to be started from the Steam interface.</p>
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Using a pre-made .dxw configuration file:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_beginners4.png" name="grafiikka7" align="bottom" width="320" height="200" border="0" id="grafiikka7" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Another way to star using Dxwnd is to import a pre-made configuration file for the game you are about to run. To do this click on FILE-&gt;IMPORT and navigate to the Dxwnd\exports\ folder. From here select the name of the entry that corresponds to the name of the game you are about to run. For example V-Rally 3.dxw and click OK.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">A new entry should now appear on the Dxwnd main window. However this entry will most likely not work before you update the path field to match the location of the game on your hard drive. To do this select the entry and then choose EDIT-&gt;MODIFY.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">NOTE: Using a pre-made configuration for a game is useful when the game does not run with the Dxwnd default settings. However these configurations may not always be up to date. A good tactic is to first try and manually add the game executable to Dxwnd and if the game does not work properly then try using the configuration files in the exports folder.</p>
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Using the Launch field:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Some games need a launcher executable to start the actual game. In these cases the Launch field must be used to point to the launcher executable. For example for the game Outcast the launcher is Outcast.exe and the main program is Oc3.exe.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_beginners6.png" name="grafiikka8" align="bottom" width="503" height="180" border="0" id="grafiikka8" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Another use of the launch field is to configure command line arguments for the game. In this example the game Abe's Oddyssee is configured with the command line option &quot;-interlane&quot;.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_beginners7.png" name="grafiikka9" align="bottom" width="503" height="180" border="0" id="grafiikka9" /></p>
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Configuring the window size &amp; position:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Now that we have the game running with the default settings we can start customizing the window size by going back to the main tab (right click on game entry and select modify).</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">From here it is possible to specify any required &quot;Window initial position &amp; size&quot;. If you are running an older game that had a low resolution like 640x480 a good quality can be achieved by doubling the window size to 1280x960. You can specify any window resolution you want but keep in mind that certain resolutions might produce a poor image quality.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">By default the option &quot;X,Y coordinates&quot; is selected and this option will obey your window position and resolution values.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">By selecting the option &quot;Desktop center&quot; the position values are ignored and the window is always placed in the center of the screen.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">If you choose the &quot;Desktop work area&quot; option both window position and size will be ignored and the window will automatically use your desktop area without covering the task bar at the bottom.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Selecting the &quot;Desktop&quot; option will use the whole screen as if the game was running in fullscreen mode.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">&quot;Keep aspect ratio&quot; is useful With &quot;Desktop work area&quot; and &quot;Desktop&quot; options and will ensure that the image maintains the proper aspect ratio.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">&quot;Hide desktop background&quot; can be used to fill the desktop background with black.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">A fairly good option is to select the flags &quot;Keep aspect ratio&quot; and &quot;Desktop work area&quot;:</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_beginners5.png" name="grafiikka10" align="bottom" width="440" height="135" border="0" id="grafiikka10" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">See: <a href="Main.html">Main &gt; Position</a> for more information.</p>
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Changing the path and/or icon of a configuration using Drag and Drop:</b></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_tutorial_beginners8.png" name="grafiikka11" align="bottom" width="503" height="180" border="0" id="grafiikka11" /></p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">To update the path simply drag and drop the executable over the Path field. (1.)</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">To update only the icon to a different one simply drag and drop the executable over the icon. (2.)</p>
+    <hr />
+    <p class="rvps2" style="margin-bottom: 0.5cm"><b>Basic troubleshooting:</b></p>
+    <ul style="list-style-type:disc">
+      <li>
+        <p class="rvps2" style="margin-bottom: 0.5cm">Note that Dxwnd currently supports only 32-bit executables. Also programs using DirectX versions higher than 9 generally do not hook properly.</p>
+      </li>
+      <li>
+        <p class="rvps2" style="margin-bottom: 0.5cm">If a game refuses to run with dxwnd make sure to run Dxwnd with administrators rights. Right click on Dxwnd.exe and choose &quot;Run as administrator&quot;. You should also make sure that the game executable you are about to run does not have any compatibility modes set. Right click on the executable and navigate to the compatibility tab making sure no options are selected there.</p>
+      </li>
+      <li>
+        <p class="rvps2" style="margin-bottom: 0.5cm">If the game exits when you resize or minimize the window check that the Dxwnd &quot;main&quot; tab option &quot;Do not notify on task switch&quot; is enabled.</p>
+      </li>
+      <li>
+        <p class="rvps2" style="margin-bottom: 0.5cm">If the game window is not scaling correctly try ebabling the &quot;Libs&quot; tab option &quot;Scaled GDI calls&quot;.</p>
+      </li>
+      <li>
+        <p class="rvps2" style="margin-bottom: 0.5cm">If you want the mouse cursor to stay inside the game window you can try setting the &quot;Cursor Clipper&quot; option to ON in the &quot;Input&quot; tab.</p>
+      </li>
+      <li>
+        <p class="rvps2" style="margin-bottom: 0.5cm">To improve the image quality especially when running a game in a custom resolution you can use the filters available in the DirectX tab. See: <a href="DirectX.html">DirectX &gt; Filtering</a> for more information.</p>
+      </li>
+      <li>
+        <p class="rvps2" style="margin-bottom: 0.5cm">GOG games may have troubles running through Dxwnd. This is usually caused by custom wrapper DLL files that are shipped with GOG games. You may try to rename these DLL files in the game folder to disable them (e.g. ddraw.dll). In addition Dxwnd Compat. tab has the flags "Hook GOG libs" and "Bypass GOG libs" that may help with some games.</p>
+      </li>
+    </ul>
+  </div>
+  <div id="topic_footer" dir="ltr">
+    <p><br /></p>
+  </div>
+</body>
+</html>

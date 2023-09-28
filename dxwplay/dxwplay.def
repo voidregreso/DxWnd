@@ -1,0 +1,12 @@
+LIBRARY "dxwplay"
+EXPORTS
+plr_pump @1
+plr_stop @2
+plr_play @3
+plr_load @4
+plr_setvolume @5
+plr_getvolume @6
+plr_seek @7
+plr_tell @8
+plr_change @9
+plr_version @10

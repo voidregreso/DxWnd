@@ -1,0 +1,42 @@
+[target]
+title0=Lords of the Realm II
+path0=F:\Games\Lords of the Realm II\LORDS2.EXE
+startfolder0=
+launchpath0=
+module0=
+opengllib0=
+notes0=Tested with Razor 1911 release. Other releases may have problems \n(also without DxWnd) when running on Win7-10.\nInitial screen is black unless initial screen resolution is set to 640x480. \nOn some game release, failing to set this screen size would crash \nthe game after the intro movie.
+registry0=
+ver0=0
+monitorid0=-1
+coord0=0
+flag0=673185826
+flagg0=1207959584
+flagh0=8212
+flagi0=138412036
+flagj0=4224
+flagk0=65536
+flagl0=9437184
+flagm0=5
+flagn0=4
+flago0=0
+tflag0=0
+dflag0=0
+posx0=50
+posy0=50
+sizx0=800
+sizy0=600
+maxfps0=0
+initts0=0
+winver0=0
+maxres0=0
+swapeffect0=0
+maxddinterface0=7
+slowratio0=2
+scanline0=0
+initresw0=640
+initresh0=480
+[stamp]
+version=2.04.26.a0
+time=Tue Apr 18 19:22:15 2017
+

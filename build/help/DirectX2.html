@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252" />
+  <title>DirectX(2)</title>
+  <meta name="GENERATOR" content="OpenOffice 4.1.3 (Win32)" />
+  <meta name="CREATED" content="0;0" />
+  <meta name="CHANGED" content="0;0" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+  <![CDATA[
+                $(document).ready(function()
+                {
+                        if (top.frames.length == 0)
+                        {
+                                var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+                                top.location.href = "DxWnd.html?" + sTopicUrl;
+                        }
+                });
+        
+  ]]>
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+        <!--
+                P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+                P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+                H3 { color: #000000 }
+                H3.cjk { font-family: "SimSun" }
+                H3.ctl { font-family: "Mangal" }
+        -->
+  /*]]>*/
+  </style>
+</head>
+<body lang="en-US" text="#000000" bgcolor="#FFFFFF" dir="ltr" style="border: none; padding: 0cm" xml:lang="en-US">
+  <div id="topic_content" dir="ltr">
+    <p class="rvps2" style="margin-bottom: 0.5cm"><img src="lib/dxwnd_configuration_directx24.png" name="grafiikka4" align="bottom" width="503" height="555" border="0" id="grafiikka4" /></p>
+    <h3 class="western">Ddraw tweaks</h3>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Lock/Unlock Pitch Fix</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXPITCH</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">Some programs ignore the pitch value returned by the DirectDrawSurface::Lock method and fill the graphics buffer according to an incorrect predetermined pitch value. This discrepancy is caused when DxWnd creates virtual surfaces with varying pitch values that may not correspond to the original values when creating the surface on a different memory type (system memory and video memory). When this is happening to a hooked program, some elements may appear diagonally skewed. Note how the left border of the text widget in the figure below goes down and to the right rather than straight down, distorting the contained text as well. This flag resolves the issue by copying the graphic scan lines to the proper memory offset. For additional examples, see <a href="SnowBoardRacer.html">Examples &gt; SnowBoard: Racer</a>.</p>
+          <p class="rvps2" style="border: none; padding: 0cm"><img src="lib/dxwnd_pitch1.jpg" name="grafiikka5" align="bottom" width="349" height="70" border="0" id="grafiikka5" /></p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Width not power of 2 fix</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">POWER2WIDTH</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">Some programs produce texture surfaces of odd sizes, which are generally not supported but can be detected when the textures have an incorrect aspect ratio. This flag resolves the issue by copying the graphic scan lines to the proper memory offset. The most notable example of this issue is in Midtown Madness.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Fix ddraw refcount</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">FIXREFCOUNTER</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">Decrement the reference counter of some objects to properly track all of DxWnd's service objects.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Set ZBufferBitDepths capability</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">SETZBUFFERBITDEPTHS</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">The dwZBufferBitDepths is an obsolete field in the DirectDraw surface descriptor. It is no longer set and should be ignored, but some old programs rely on the value of this field and may crash if the field is empty (contains the null value). This flag copies the value returned by the GetCaps method and places it into the dwZBufferBitDepths field. The most notable example of this issue is in Mech Commander 2.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Limit ddraw interface</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">LIMITDDRAW</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">Instead of using a specific version of DirectDraw, some programs simply request the most recent version available on the machine. Using a version of DirectDraw that is significantly newer than what was available when the game was developed may have poor results. This option hides newer versions of DirectDraw from the hooked program, basically allowing you to manually specify which version of DirectDraw the program should use. Choose a maximum DirectDraw version from the drop-down menu located near this option.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Set 16BPP RGB565 encoding</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">USERGB565</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">By default, DxWnd emulates 16BPP color with RGB555 encoding. The option forces RGB565. This option only impacts the video in emulation mode and with 16BPP color depth.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">No EXCLUSIVE coop level</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">NODDEXCLUSIVEMODE</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">When running a program in windowed mode, DxWnd suppresses the DirectDraw DDSCL_EXCLUSIVE mode in the SetCooperativeLevel wrapper, since this mode is not allowed in windowed mode. However, if windowed mode is not requested, DxWnd leaves the cooperative level flags as they are, allowing DDSCL_EXCLUSIVE cooperative mode if requested. This flag also suppresses the DDSCL_EXCLUSIVE mode in fullscreen mode (that is, when DDSCL_FULLSCREEN is set). This flag is required when running &quot;Warhammer 40,000: Rites of War&quot; in non-windowed fullscreen mode.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Lock FULLSCREEM coop level</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">LOCKFULLSCREENCOOP</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">Prevents return to normal coop level in non windowed mode, used in &quot;Speedboat Attack&quot; fullscreen.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Create a Desktop Win</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">CREATEDESKTOP</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">This flag creates a window if a game doesn't bother building a gaming window and blits directly on top of the desktop. Fixes &quot;Man TT Super Bike&quot;</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Safe palette usage</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">SAFEPALETTEUSAGE</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">Option to fix DirectDrawPalette use and abuse. As the name suggests, &quot;Safe palette usage&quot; inhibits some part of the palette handling that may cause problems in some circumstances. (fixes &quot;Speedboat Attack&quot;).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Enable gamma ramp emulation</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">LOADGAMMARAMP</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">To enable gamma ramp correction in ddraw. See <a href="Gamma.html">Gamma control</a>.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">VSync</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">This panel contains a set of different options meant to fine tune the vertical sync feature. In here, by vsync we mean the wait operation performed by the WaitForVerticalBlank() ddraw method. It should be noted that the vsync is always referred to operations toward the real primary surface on video memory, so in direct modes it changes the Flip / Blt to primary surface operations, while in emulated modes it applies only to blit operations from the virtual primary surface to the real primary surface. The panel contains two selectors, one to specify whether to perform th vsync operation or not, the other to determine the algorythm to be used. It should be noted that the former flag &quot;Optimize CPU&quot; is equivalent to the combination of vsync &quot;ON&quot; + &quot;WaitForFrequency&quot;.</p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">Default</p>
+        </td>
+        <td width="138"></td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Set by default. DxWnd closely follows the programs indications about vsync.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">ON</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm">FORCEVSYNC</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">When not present, DxWnd insert a WaitForVerticalBlank operation before each Blt/Flip to primary surface.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">OFF</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm">FORCENOVSYNC</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Any WaitForVericalBlank() invocation is bypassed.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">WaitForVerticalBlank</p>
+        </td>
+        <td width="138"></td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Set by default. When performed, the vsync operation invokes the ddraw native WaitForVerticalBlank method.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">WaitForScanline</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm">VSYNCSCANLINE</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">This flag is for experimental usage, mainly to try to cause bad wait conditions on the vertical blank condition. The ddraw WaitForVerticalBlank method anly allows for two operation modes, DDWAITVB_BLOCKBEGIN and DDWAITVB_BLOCKEND. Setting this flag the operation is replaced by a series of Sleep(1) waits until the vertical line reaches a given threshold set in the numeric field to the right. The number in there, ranging from 1 to some value above 100, indicates the percentage of vertical line that triggers the end of wait condition.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">WaitForFrequency</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm">SAVELOAD</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">On some specific HW and conditions, the WaitForVerticalBlank method could be either unimplemented or implemented in such a way that causes heavy CPU consumption. The WaitForFrequency flag replaces the WaitForVerticalBlank() implementation with an equivalent Sleep(n) operation, where n is calculated to match the exact video vertical frequency. This way, CPU consumption is lowered to the minimum, though the operation is performed regardless the actual vertical line position. On modern computers and video HW, though, this aspect is usually irrelevant and the risk of getting video tearing is absent.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Flip/Blt Wait</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">This panel contains a set of different options meant to fine tune the wait options for Blt or Flip operations. It should be noted that, when using emulated modes, a Flip operation may easily be mapped to one sequence of one or more Blt and Flip operations, so that the original wait indication may have to be remapped to the corresponding indication for another method. It should be noted that the wait is always referred to operations toward the real primary surface on video memory, so in direct modes it changes the Flip / Blt to primary surface operations, while in emulated modes it applies only to blit operations from the virtual primary surface to the real primary surface.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">The following are the wait flags affected by the &quot;Blt/Flip Wait&quot; panel:</p>
+    <ul>
+      <li>
+        <p>Blt: DDBLT_WAIT, DDBLT_DONOTWAIT</p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0.5cm">Flip: DDFLIP_WAIT, DDFLIP_DONOTWAIT</p>
+      </li>
+    </ul>
+    <p class="rvps2" style="margin-bottom: 0.5cm">Note: in ddraw, you can specify none of the flags above, but in that case the behaviour is mapped to either a WAIT or a DONOTWAIT condition depending on the ddraw interface version.</p>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">default</p>
+        </td>
+        <td width="138"></td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">The Blt / Flip wait related flags are left unchanged.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">ON</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm">FORCEWAIT</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Blt / Flip operations are forced to be performed with DDBLT_WAIT / DDFLIP_WAIT flags respetively.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">OFF</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm">FORCENOWAIT</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Blt / Flip operations are forced to be performed with DDBLT_DONOTWAIT / DDFLIP_DONOTWAIT flags respetively.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Clipper</h3>
+    <p class="rvps2" style="margin-bottom: 0.5cm">This panel contains a set of different options meant to fine tune the clipper creation options for ddraw operations. It should be noted that the lack of a clipper is a frequent cause of the AERO support so when, despite the emulation flags beign properly set, the program breaks AERO at startup, a clipper creation should be attempted.</p>
+    <p class="rvps2" style="margin-bottom: 0.5cm">msdn quote: <i>One common use for a clipper is to define the boundaries of the screen or window. With a clipper that has the screen rectangle as its clip list, DirectDraw knows how to trim the sprite as it performs the blit so that only the visible portion is copied. Without a clipper object, DirectDraw does not allow you to blit the entire sprite, because part of it would fall outside the destination surface. A straight copy of the pixel values in the sprite to the destination surface buffer would result in an incorrect display and even memory access violations.</i></p>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">Default</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm"></p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">The clipper object is created or not according to program specifications.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">ON</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm">FORCECLIPPER</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Whenever the program omits creating a clipper object (in fullscreen program this is not mandatory!) DxWnd forces its creation. (For example this fixes the MechWarrior 3 targeting crash when resolution is set higher than 800x600.)</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">OFF</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm">SUPPRESSCLIPPING</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">In some rare cases the clipper creation may lead to screen blinks, slow operations or errors. In these cases it is better to sacrifice AERO support and turn clipping off to let the program run.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">MAX</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm">MAXCLIPPER</p>
+        </td>
+        <td width="1387">
+          <p class="rvps2" style="border: none; padding: 0cm">forces the ddraw clip region to be the whole virtual desktop. This is necessary when the program uses the clipper area size to perform further calculations: in case of virtualized desktop, the actual clipper area does not match the scaled values since the primary surface is as big as the whole actual desktop. Used (so far) only by "Full Pipe".</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">FourCC processing</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">No</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm"><br /></p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm"><br /></p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">HW</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">HWFOURCC</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">Hardware processing.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">SW</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">SWFOURCC</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">Software processing.</p>
+        </td>
+      </tr>
+    </table>
+    <p><br /></p>
+    <hr />
+    <h3 class="western">Capabilities</h3>
+    <table width="100%" border="1" cellpadding="2" cellspacing="2">
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppress overlay capability</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">SUPPRESSOVERLAY</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">Prevents the game from detecting any hardware overlay capability. Hardware overlay is very efficient, but not very flexible. If you run a program with hardware overlay in a window, you may be able to reposition and resize the window, but the blitted surface (the content of the window) doesn't move or change. This flag makes programs ignore hardware overlay capability so that you can move or stretch the window with expected results. The most notable example of this issue is in Moto Racer 2.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Set minimal caps</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">MINIMALCAPS</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="border: none; padding: 0cm">Simulates minimal hardware capabilities similar to what's available by the VirtualPC or VMWare emulators. Some older games may not support advanced features, in which case this flag can improve the rendering process and eliminate some artifacts.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="171">
+          <p class="rvps2" style="border: none; padding: 0cm">No HAL Device</p>
+        </td>
+        <td width="138">
+          <p class="rvps2" style="border: none; padding: 0cm">NOHALDEVICE</p>
+        </td>
+        <td width="1228">
+          <p class="rvps2" style="border: none; padding: 0cm">Some old games have a bad support for D3D hardware acceleration. This flag forces the exposed capabilities to map those present when a 3D hardware is absent, mimic for instance of a condition of remote desktop connection. The flag fixed the missing 3D car models in <a href="GrandPrixWorld.html">Grand Prix World</a>. when run on specific video hardware.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Clear texture FourCC</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">CLEARTEXTUREFOURCC</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">DxWnd lets you dump, edit, and replace all uncompressed game textures. Textures compressed with a FourCC codec can't be processed this way. This flag forces FourCC capabilities OFF in the capability query and in texture surface creation. This forces the game to use plain, uncompressed bitmap textures that can be easily tweaked. To avoid texture errors, you may need to adjust texture flags. This flag was introduced to allow uncompressed textures for the game &quot;The Sting!&quot;.</p>
+          <p class="rvps2" style="border: none; padding: 0cm">It now also trims the list to eliminate the DDPF_FOURCC entires. This fixes rendering and text issues in <a href="Rogue3D.html">Star Wars: Rogue Squardon 3D</a>.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td width="247">
+          <p class="rvps2" style="border: none; padding: 0cm">Suppress FOURCC blit capability</p>
+        </td>
+        <td width="157">
+          <p class="rvps2" style="border: none; padding: 0cm">SUPPRESSFOURCCBLT</p>
+        </td>
+        <td width="1129">
+          <p class="rvps2" style="margin-bottom: 0.5cm; border: none; padding: 0cm">When the application queries the device capabilities, this flag pretends the device has no capabilities to perform flip or blit operations when the surfaces have fourcc encoded data. This is useful because fourcc codec usually work in fullscreen mode, but fail in windowed mode</p>
+        </td>
+      </tr>
+    </table>
+    <div id="topic_footer" dir="ltr">
+      <p style="margin-bottom: 0.5cm"><br />
+      <br /></p>
+    </div>
+  </div>
+</body>
+</html>

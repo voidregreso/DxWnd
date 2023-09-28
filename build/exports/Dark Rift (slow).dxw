@@ -1,0 +1,46 @@
+[target]
+title0=Dark Rift
+path0=D:\Games\Dark Rift\dr\dr.exe
+startfolder0=
+launchpath0=
+module0=
+opengllib0=
+notes0=
+registry0=[HKEY_CURRENT_CONFIG\Display\Settings]\n"BitsPerPixel"="16"\n\n[HKEY_LOCAL_MACHINE\Software\Kronos\Dark Rift\1.0]\n
+ver0=0
+monitorid0=-1
+filterid0=0
+renderer0=3
+coord0=0
+flag0=941621408
+flagg0=1209012352
+flagh0=1040
+flagi0=1212153860
+flagj0=4224
+flagk0=98304
+flagl0=75530768
+flagm0=256
+flagn0=17825796
+flago0=16
+tflag0=0
+dflag0=0
+posx0=50
+posy0=50
+sizx0=800
+sizy0=600
+maxfps0=40
+initts0=0
+winver0=0
+maxres0=-1
+swapeffect0=0
+maxddinterface0=7
+slowratio0=2
+scanline0=0
+initresw0=390
+initresh0=230
+fakec0=
+faked0=
+[stamp]
+version=v2.04.48
+time=Fri Oct 06 08:48:40 2017
+
